@@ -1,9 +1,9 @@
-package com.clientui;
+package com.guitarstore.zuulserver;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClientuiApplicationTests {
+class ZuulServerApplicationTests {
 
 	void contextLoads() {
 	}
