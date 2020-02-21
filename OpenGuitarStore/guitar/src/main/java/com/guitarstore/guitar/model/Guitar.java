@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "guitar")
 public class Guitar {
+
     /**
      * CONSTRUCTOR
      */
