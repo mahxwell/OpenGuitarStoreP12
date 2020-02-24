@@ -79,6 +79,16 @@ CREATE TABLE public.image (
 
 );
 
+CREATE TABLE public.review (
+	review_id serial NOT NULL,
+	review_date date,
+	review_comment varchar,
+	review_note integer,
+	guitar_id_guitar integer,
+	costumer_id_costumer integer,
+	CONSTRAINT review_pk PRIMARY KEY (review_id)
+	
+);
 
 CREATE TABLE public.employe (
 	employe_id serial NOT NULL,

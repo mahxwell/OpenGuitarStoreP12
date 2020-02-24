@@ -9,6 +9,7 @@ public class User {
     /**
      * CONSTRUCTOR
      */
+
     public User() {
     }
 
@@ -52,6 +53,7 @@ public class User {
     /**
      * GETTERS AND SETTERS
      */
+
     public Integer getCostumer_id() {
         return costumer_id;
     }
@@ -99,9 +101,11 @@ public class User {
     public void setCostumer_password(String costumer_password) {
         this.costumer_password = costumer_password;
     }
+
     /**
      * TOSTRING
      */
+
     @Override
     public String toString() {
         return "User{" +
