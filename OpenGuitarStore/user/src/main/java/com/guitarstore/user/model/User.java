@@ -13,17 +13,18 @@ public class User {
     public User() {
     }
 
-    public User(Integer costumer_id, String costumer_name,
+    public User(String costumer_name,
                 String costumer_surname,
                 String costumer_pseudo,
                 String costumer_mail,
-                String costumer_password) {
-        this.costumer_id = costumer_id;
+                String costumer_password,
+                boolean costumer_newsletter) {
         this.costumer_name = costumer_name;
         this.costumer_surname = costumer_surname;
         this.costumer_pseudo = costumer_pseudo;
         this.costumer_mail = costumer_mail;
         this.costumer_password = costumer_password;
+        this.costumer_newsletter = costumer_newsletter;
     }
 
     /**
@@ -50,10 +51,12 @@ public class User {
     @Column(name = "costumer_password")
     private String costumer_password;
 
+    @Column(name = "costumer_newsletter")
+    private boolean costumer_newsletter;
+
     /**
      * GETTERS AND SETTERS
      */
-
     public Integer getCostumer_id() {
         return costumer_id;
     }
@@ -102,10 +105,17 @@ public class User {
         this.costumer_password = costumer_password;
     }
 
+    public boolean isCostumer_newsletter() {
+        return costumer_newsletter;
+    }
+
+    public void setCostumer_newsletter(boolean costumer_newsletter) {
+        this.costumer_newsletter = costumer_newsletter;
+    }
+
     /**
      * TOSTRING
      */
-
     @Override
     public String toString() {
         return "User{" +
@@ -115,6 +125,7 @@ public class User {
                 ", costumer_pseudo='" + costumer_pseudo + '\'' +
                 ", costumer_mail='" + costumer_mail + '\'' +
                 ", costumer_password='" + costumer_password + '\'' +
+                ", costumer_newsletter=" + costumer_newsletter +
                 '}';
     }
 }

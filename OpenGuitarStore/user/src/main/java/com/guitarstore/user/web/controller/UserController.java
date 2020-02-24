@@ -31,11 +31,10 @@ public class UserController implements HealthIndicator {
     }
 
     @GetMapping("/findall")
-    public User findAll() {
+    public List<User> findAll() {
 
         List<User> customers = userDao.findAll();
-        System.out.println(customers);
-        return customers.get(0);
+        return customers;
 
     }
 

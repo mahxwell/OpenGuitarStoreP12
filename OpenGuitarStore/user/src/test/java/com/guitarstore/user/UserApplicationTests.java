@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserApplicationTests {
@@ -22,7 +24,7 @@ public class UserApplicationTests {
 
     @Test
     public void findAllTest() {
-        User user = userController.findAll();
-        Assert.assertTrue(user != null);
+        List<User> users = userController.findAll();
+        Assert.assertTrue(users.size()>=1);
     }
 }

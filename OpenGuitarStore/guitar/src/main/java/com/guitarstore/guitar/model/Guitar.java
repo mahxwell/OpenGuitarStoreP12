@@ -18,7 +18,7 @@ public class Guitar {
                   Integer guitar_year,
                   Integer image_id_image,
                   Integer manufacturer_id_manufacturer,
-                  Integer guitar_price,
+                  String guitar_price,
                   boolean guitar_status) {
         this.guitar_name = guitar_name;
         this.guitar_description = guitar_description;
@@ -48,7 +48,7 @@ public class Guitar {
     private Integer guitar_year;
 
     @Column(name = "guitar_price")
-    private Integer guitar_price;
+    private String guitar_price;
 
     @Column(name = "guitar_status")
     private boolean guitar_status;
@@ -95,6 +95,22 @@ public class Guitar {
         this.guitar_year = guitar_year;
     }
 
+    public String getGuitar_price() {
+        return guitar_price;
+    }
+
+    public void setGuitar_price(String guitar_price) {
+        this.guitar_price = guitar_price;
+    }
+
+    public boolean isGuitar_status() {
+        return guitar_status;
+    }
+
+    public void setGuitar_status(boolean guitar_status) {
+        this.guitar_status = guitar_status;
+    }
+
     public Integer getImage_id_image() {
         return image_id_image;
     }
@@ -109,22 +125,6 @@ public class Guitar {
 
     public void setManufacturer_id_manufacturer(Integer manufacturer_id_manufacturer) {
         this.manufacturer_id_manufacturer = manufacturer_id_manufacturer;
-    }
-
-    public float getGuitar_price() {
-        return guitar_price;
-    }
-
-    public void setGuitar_price(Integer guitar_price) {
-        this.guitar_price = guitar_price;
-    }
-
-    public boolean isGuitar_status() {
-        return guitar_status;
-    }
-
-    public void setGuitar_status(boolean guitar_status) {
-        this.guitar_status = guitar_status;
     }
 
     /**

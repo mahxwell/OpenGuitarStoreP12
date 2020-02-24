@@ -9,7 +9,6 @@ import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,19 +56,12 @@ public class GuitarController implements HealthIndicator {
     }
 
     @GetMapping("/findall")
-    public Guitar findAll() {
+    public List<Guitar> findAll() {
 
         List<Guitar> customers = guitarDao.findAll();
 
-        List<Guitar> customerUI = new ArrayList<>();
 
-        for (Guitar customer : customers) {
-
-            customerUI.add(new Guitar(customer.getGuitar_name(), customer.getGuitar_description(), null, null, null, 0, false));
-        }
-
-        System.out.println(customers);
-        return customerUI.get(0);
+        return customers;
 
     }
 
