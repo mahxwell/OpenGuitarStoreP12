@@ -13,3 +13,23 @@ services:
       - POSTGRES_DB=guitarstoredb
       - POSTGRES_USER=guitarstoreuser
       - POSTGRES_PASSWORD=toto
+  springconfig:
+    image: mahxwell/springconfig
+    container_name: springconfig
+    ports:
+      -  "9101:9101"
+  eureka:
+    image: mahxwell/eureka
+    container_name: eureka
+    ports:
+      -  "9102:9102"
+  zuul:
+    image: mahxwell/zuul
+    container_name: zuul
+    ports:
+      -  "9004:9004"
+  springadmin:
+    image: mahxwell/springadmin
+    container_name: springadmin
+    ports:
+      -  "9105:9105"
