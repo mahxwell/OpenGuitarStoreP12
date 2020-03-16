@@ -1,8 +1,8 @@
 package com.clientui.beans;
 
-public class GuitarBean {
+public class Guitar {
 
-    public GuitarBean() {
+    public Guitar() {
     }
 
     private Integer guitar_id;
@@ -15,7 +15,7 @@ public class GuitarBean {
 
     private boolean guitar_status;
 
-    private Integer guitar_price;
+    private String guitar_price;
 
     private Integer image_id_image;
 
@@ -62,11 +62,11 @@ public class GuitarBean {
         this.guitar_status = guitar_status;
     }
 
-    public Integer getGuitar_price() {
+    public String getGuitar_price() {
         return guitar_price;
     }
 
-    public void setGuitar_price(Integer guitar_price) {
+    public void setGuitar_price(String guitar_price) {
         this.guitar_price = guitar_price;
     }
 

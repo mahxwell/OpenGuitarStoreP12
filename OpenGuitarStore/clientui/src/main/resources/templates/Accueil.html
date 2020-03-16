@@ -9,10 +9,10 @@
 <body>
 <div class="container">
     <h1 class="text-center">Application OpenGuitarStore</h1>
-    <div class="row">
-        <p th:text="${guitars.guitar_name}"></p>
-        <p th:text="${guitars.guitar_description}"></p>
+        <div th:each="guitar : ${guitars}" class="col-md-4 my-1">
+            <p th:text="${guitar.guitar_name}"></p>
     </div>
+    <a th:href="@{homeSignedIn}">Test</a>
     <script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
 </div>
 

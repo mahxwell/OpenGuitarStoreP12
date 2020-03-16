@@ -6,6 +6,7 @@ import com.guitarstore.user.web.exceptions.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,7 @@ public class UserController implements HealthIndicator {
         return Health.up().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/findall")
     public List<User> findAll() {
 
