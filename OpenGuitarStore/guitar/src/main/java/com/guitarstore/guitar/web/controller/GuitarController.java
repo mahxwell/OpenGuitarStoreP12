@@ -55,6 +55,7 @@ public class GuitarController implements HealthIndicator {
         return product;
     }
 
+    @CrossOrigin
     @GetMapping("/findall")
     public List<Guitar> findAll() {
 
@@ -69,9 +70,9 @@ public class GuitarController implements HealthIndicator {
     public void ajouterGuitare() {
 
         Guitar guitar = new Guitar();
-        guitar.setGuitar_name("yes");
-        guitar.setGuitar_description("yo");
-        guitar.setGuitar_status(true);
+        guitar.setGuitarname("yes");
+        guitar.setGuitardescription("yo");
+        guitar.setGuitarstatus(true);
         guitarDao.save(guitar);
         return;
     }

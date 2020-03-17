@@ -13,16 +13,16 @@ public class Review {
     public Review() {
     }
 
-    public Review(Date review_date,
-                  String review_comment,
-                  Integer review_note,
-                  Integer guitar_id_guitar,
-                  Integer costumer_id_costumer) {
-        this.review_date = review_date;
-        this.review_comment = review_comment;
-        this.review_note = review_note;
-        this.guitar_id_guitar = guitar_id_guitar;
-        this.costumer_id_costumer = costumer_id_costumer;
+    public Review(Date reviewdate,
+                  String reviewcomment,
+                  Integer reviewnote,
+                  Integer guitaridguitar,
+                  Integer costumeridcostumer) {
+        this.reviewdate = reviewdate;
+        this.reviewcomment = reviewcomment;
+        this.reviewnote = reviewnote;
+        this.guitaridguitar = guitaridguitar;
+        this.costumeridcostumer = costumeridcostumer;
     }
 
     /**
@@ -32,74 +32,74 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "review_id")
-    private Integer review_id;
+    private Integer reviewid;
 
     @Column(name = "review_date")
-    private Date review_date;
+    private Date reviewdate;
 
     @Column(name = "review_comment")
-    private String review_comment;
+    private String reviewcomment;
 
     @Column(name = "review_note")
-    private Integer review_note;
+    private Integer reviewnote;
 
     @Column(name = "guitar_id_guitar")
-    private Integer guitar_id_guitar;
+    private Integer guitaridguitar;
 
     @Column(name = "costumer_id_costumer")
-    private Integer costumer_id_costumer;
+    private Integer costumeridcostumer;
 
     /**
      * GETTERS AND SETTERS
      */
 
 
-    public Integer getReview_id() {
-        return review_id;
+    public Integer getReviewid() {
+        return reviewid;
     }
 
-    public void setReview_id(Integer review_id) {
-        this.review_id = review_id;
+    public void setReviewid(Integer reviewid) {
+        this.reviewid = reviewid;
     }
 
-    public Date getReview_date() {
-        return review_date;
+    public Date getReviewdate() {
+        return reviewdate;
     }
 
-    public void setReview_date(Date review_date) {
-        this.review_date = review_date;
+    public void setReviewdate(Date reviewdate) {
+        this.reviewdate = reviewdate;
     }
 
-    public String getReview_comment() {
-        return review_comment;
+    public String getReviewcomment() {
+        return reviewcomment;
     }
 
-    public void setReview_comment(String review_comment) {
-        this.review_comment = review_comment;
+    public void setReviewcomment(String reviewcomment) {
+        this.reviewcomment = reviewcomment;
     }
 
-    public Integer getReview_note() {
-        return review_note;
+    public Integer getReviewnote() {
+        return reviewnote;
     }
 
-    public void setReview_note(Integer review_note) {
-        this.review_note = review_note;
+    public void setReviewnote(Integer reviewnote) {
+        this.reviewnote = reviewnote;
     }
 
-    public Integer getGuitar_id_guitar() {
-        return guitar_id_guitar;
+    public Integer getGuitaridguitar() {
+        return guitaridguitar;
     }
 
-    public void setGuitar_id_guitar(Integer guitar_id_guitar) {
-        this.guitar_id_guitar = guitar_id_guitar;
+    public void setGuitaridguitar(Integer guitaridguitar) {
+        this.guitaridguitar = guitaridguitar;
     }
 
-    public Integer getCostumer_id_costumer() {
-        return costumer_id_costumer;
+    public Integer getCostumeridcostumer() {
+        return costumeridcostumer;
     }
 
-    public void setCostumer_id_costumer(Integer costumer_id_costumer) {
-        this.costumer_id_costumer = costumer_id_costumer;
+    public void setCostumeridcostumer(Integer costumeridcostumer) {
+        this.costumeridcostumer = costumeridcostumer;
     }
 
     /**
@@ -109,12 +109,12 @@ public class Review {
     @Override
     public String toString() {
         return "Review{" +
-                "review_id=" + review_id +
-                ", review_date=" + review_date +
-                ", review_comment='" + review_comment + '\'' +
-                ", review_note=" + review_note +
-                ", guitar_id_guitar=" + guitar_id_guitar +
-                ", costumer_id_costumer=" + costumer_id_costumer +
+                "reviewid=" + reviewid +
+                ", reviewdate=" + reviewdate +
+                ", reviewcomment='" + reviewcomment + '\'' +
+                ", reviewnote=" + reviewnote +
+                ", guitaridguitar=" + guitaridguitar +
+                ", costumeridcostumer=" + costumeridcostumer +
                 '}';
     }
 }

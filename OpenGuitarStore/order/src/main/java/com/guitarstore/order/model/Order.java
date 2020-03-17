@@ -14,14 +14,14 @@ public class Order {
     public Order() {
     }
 
-    public Order(String order_date,
-                 Date order_delivery_date,
-                 Integer costumer_id_costumer,
-                 Integer guitarmodel_id_guitarmodel) {
-        this.order_date = order_date;
-        this.order_delivery_date = order_delivery_date;
-        this.costumer_id_costumer = costumer_id_costumer;
-        this.guitarmodel_id_guitarmodel = guitarmodel_id_guitarmodel;
+    public Order(String orderdate,
+                 Date orderdeliverydate,
+                 Integer costumeridcostumer,
+                 Integer guitarmodelidguitarmodel) {
+        this.orderdate = orderdate;
+        this.orderdeliverydate = orderdeliverydate;
+        this.costumeridcostumer = costumeridcostumer;
+        this.guitarmodelidguitarmodel = guitarmodelidguitarmodel;
     }
 
     /**
@@ -31,61 +31,61 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "costumerorder_id")
-    private Integer order_id;
+    private Integer orderid;
 
     @Column(name = "costumerorder_date")
-    private String order_date;
+    private String orderdate;
 
     @Column(name = "costumerorder_delivery_date")
-    private Date order_delivery_date;
+    private Date orderdeliverydate;
 
     @Column(name = "costumer_id_costumer")
-    private Integer costumer_id_costumer;
+    private Integer costumeridcostumer;
 
     @Column(name = "guitarmodel_id_guitarmodel")
-    private Integer guitarmodel_id_guitarmodel;
+    private Integer guitarmodelidguitarmodel;
 
     /**
      * GETTERS AND SETTERS
      */
-    public Integer getOrder_id() {
-        return order_id;
+    public Integer getOrderid() {
+        return orderid;
     }
 
-    public void setOrder_id(Integer order_id) {
-        this.order_id = order_id;
+    public void setOrderid(Integer orderid) {
+        this.orderid = orderid;
     }
 
-    public String getOrder_date() {
-        return order_date;
+    public String getOrderdate() {
+        return orderdate;
     }
 
-    public void setOrder_date(String order_date) {
-        this.order_date = order_date;
+    public void setOrderdate(String orderdate) {
+        this.orderdate = orderdate;
     }
 
-    public Date getOrder_delivery_date() {
-        return order_delivery_date;
+    public Date getOrderdeliverydate() {
+        return orderdeliverydate;
     }
 
-    public void setOrder_delivery_date(Date order_delivery_date) {
-        this.order_delivery_date = order_delivery_date;
+    public void setOrderdeliverydate(Date orderdeliverydate) {
+        this.orderdeliverydate = orderdeliverydate;
     }
 
-    public Integer getCostumer_id_costumer() {
-        return costumer_id_costumer;
+    public Integer getCostumeridcostumer() {
+        return costumeridcostumer;
     }
 
-    public void setCostumer_id_costumer(Integer costumer_id_costumer) {
-        this.costumer_id_costumer = costumer_id_costumer;
+    public void setCostumeridcostumer(Integer costumeridcostumer) {
+        this.costumeridcostumer = costumeridcostumer;
     }
 
-    public Integer getGuitarmodel_id_guitarmodel() {
-        return guitarmodel_id_guitarmodel;
+    public Integer getGuitarmodelidguitarmodel() {
+        return guitarmodelidguitarmodel;
     }
 
-    public void setGuitarmodel_id_guitarmodel(Integer guitarmodel_id_guitarmodel) {
-        this.guitarmodel_id_guitarmodel = guitarmodel_id_guitarmodel;
+    public void setGuitarmodelidguitarmodel(Integer guitarmodelidguitarmodel) {
+        this.guitarmodelidguitarmodel = guitarmodelidguitarmodel;
     }
 
     /**
@@ -95,11 +95,11 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "order_id=" + order_id +
-                ", order_date='" + order_date + '\'' +
-                ", order_delivery_date=" + order_delivery_date +
-                ", costumer_id_costumer=" + costumer_id_costumer +
-                ", guitarmodel_id_guitarmodel=" + guitarmodel_id_guitarmodel +
+                "orderid=" + orderid +
+                ", orderdate='" + orderdate + '\'' +
+                ", orderdeliverydate=" + orderdeliverydate +
+                ", costumeridcostumer=" + costumeridcostumer +
+                ", guitarmodelidguitarmodel=" + guitarmodelidguitarmodel +
                 '}';
     }
 }

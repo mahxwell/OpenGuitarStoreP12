@@ -12,10 +12,9 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Integer costumer_id_costumer,
-                       Integer guitar_id_guitar) {
-        this.costumer_id_costumer = costumer_id_costumer;
-        this.guitar_id_guitar = guitar_id_guitar;
+    public Reservation(Integer costumeridcostumer, Integer guitaridguitar) {
+        this.costumeridcostumer = costumeridcostumer;
+        this.guitaridguitar = guitaridguitar;
     }
 
     /**
@@ -25,13 +24,13 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "reservation_id")
-    private Integer reservation_id;
+    private Integer reservationid;
 
     @Column(name = "costumer_id_costumer")
-    private Integer costumer_id_costumer;
+    private Integer costumeridcostumer;
 
     @Column(name = "guitar_id_guitar")
-    private Integer guitar_id_guitar;
+    private Integer guitaridguitar;
 
 
     /**
@@ -39,28 +38,28 @@ public class Reservation {
      */
 
 
-    public Integer getReservation_id() {
-        return reservation_id;
+    public Integer getReservationid() {
+        return reservationid;
     }
 
-    public void setReservation_id(Integer reservation_id) {
-        this.reservation_id = reservation_id;
+    public void setReservationid(Integer reservationid) {
+        this.reservationid = reservationid;
     }
 
-    public Integer getCostumer_id_costumer() {
-        return costumer_id_costumer;
+    public Integer getCostumeridcostumer() {
+        return costumeridcostumer;
     }
 
-    public void setCostumer_id_costumer(Integer costumer_id_costumer) {
-        this.costumer_id_costumer = costumer_id_costumer;
+    public void setCostumeridcostumer(Integer costumeridcostumer) {
+        this.costumeridcostumer = costumeridcostumer;
     }
 
-    public Integer getGuitar_id_guitar() {
-        return guitar_id_guitar;
+    public Integer getGuitaridguitar() {
+        return guitaridguitar;
     }
 
-    public void setGuitar_id_guitar(Integer guitar_id_guitar) {
-        this.guitar_id_guitar = guitar_id_guitar;
+    public void setGuitaridguitar(Integer guitaridguitar) {
+        this.guitaridguitar = guitaridguitar;
     }
 
     /**
@@ -70,9 +69,9 @@ public class Reservation {
     @Override
     public String toString() {
         return "Reservation{" +
-                "reservation_id=" + reservation_id +
-                ", costumer_id_costumer=" + costumer_id_costumer +
-                ", guitar_id_guitar=" + guitar_id_guitar +
+                "reservationid=" + reservationid +
+                ", costumeridcostumer=" + costumeridcostumer +
+                ", guitaridguitar=" + guitaridguitar +
                 '}';
     }
 }

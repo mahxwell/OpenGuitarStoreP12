@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface UserDao extends JpaRepository<User, Integer> {
 
-    @Query("SELECT u FROM User u WHERE u.costumer_id = ?1")
+    @Query("SELECT u FROM User u WHERE u.id = ?1")
     Optional<User> findit(int i);
 }

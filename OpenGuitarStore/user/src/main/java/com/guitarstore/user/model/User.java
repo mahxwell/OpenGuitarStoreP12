@@ -13,18 +13,18 @@ public class User {
     public User() {
     }
 
-    public User(String costumer_name,
-                String costumer_surname,
-                String costumer_pseudo,
-                String costumer_mail,
-                String costumer_password,
-                boolean costumer_newsletter) {
-        this.costumer_name = costumer_name;
-        this.costumer_surname = costumer_surname;
-        this.costumer_pseudo = costumer_pseudo;
-        this.costumer_mail = costumer_mail;
-        this.costumer_password = costumer_password;
-        this.costumer_newsletter = costumer_newsletter;
+    public User(String name,
+                String surname,
+                String pseudo,
+                String mail,
+                String password,
+                boolean newsletter) {
+        this.name = name;
+        this.surname = surname;
+        this.pseudo = pseudo;
+        this.mail = mail;
+        this.password = password;
+        this.newsletter = newsletter;
     }
 
     /**
@@ -34,83 +34,83 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "costumer_id")
-    private Integer costumer_id;
+    private Integer id;
 
     @Column(name = "costumer_name")
-    private String costumer_name;
+    private String name;
 
     @Column(name = "costumer_surname")
-    private String costumer_surname;
+    private String surname;
 
     @Column(name = "costumer_pseudo")
-    private String costumer_pseudo;
+    private String pseudo;
 
     @Column(name = "costumer_mail")
-    private String costumer_mail;
+    private String mail;
 
     @Column(name = "costumer_password")
-    private String costumer_password;
+    private String password;
 
     @Column(name = "costumer_newsletter")
-    private boolean costumer_newsletter;
+    private boolean newsletter;
 
     /**
      * GETTERS AND SETTERS
      */
-    public Integer getCostumer_id() {
-        return costumer_id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCostumer_id(Integer costumer_id) {
-        this.costumer_id = costumer_id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getCostumer_name() {
-        return costumer_name;
+    public String getName() {
+        return name;
     }
 
-    public void setCostumer_name(String costumer_name) {
-        this.costumer_name = costumer_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCostumer_surname() {
-        return costumer_surname;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setCostumer_surname(String costumer_surname) {
-        this.costumer_surname = costumer_surname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public String getCostumer_pseudo() {
-        return costumer_pseudo;
+    public String getPseudo() {
+        return pseudo;
     }
 
-    public void setCostumer_pseudo(String costumer_pseudo) {
-        this.costumer_pseudo = costumer_pseudo;
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
     }
 
-    public String getCostumer_mail() {
-        return costumer_mail;
+    public String getMail() {
+        return mail;
     }
 
-    public void setCostumer_mail(String costumer_mail) {
-        this.costumer_mail = costumer_mail;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
-    public String getCostumer_password() {
-        return costumer_password;
+    public String getPassword() {
+        return password;
     }
 
-    public void setCostumer_password(String costumer_password) {
-        this.costumer_password = costumer_password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public boolean isCostumer_newsletter() {
-        return costumer_newsletter;
+    public boolean isNewsletter() {
+        return newsletter;
     }
 
-    public void setCostumer_newsletter(boolean costumer_newsletter) {
-        this.costumer_newsletter = costumer_newsletter;
+    public void setNewsletter(boolean newsletter) {
+        this.newsletter = newsletter;
     }
 
     /**
@@ -119,13 +119,13 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "costumer_id=" + costumer_id +
-                ", costumer_name='" + costumer_name + '\'' +
-                ", costumer_surname='" + costumer_surname + '\'' +
-                ", costumer_pseudo='" + costumer_pseudo + '\'' +
-                ", costumer_mail='" + costumer_mail + '\'' +
-                ", costumer_password='" + costumer_password + '\'' +
-                ", costumer_newsletter=" + costumer_newsletter +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", pseudo='" + pseudo + '\'' +
+                ", mail='" + mail + '\'' +
+                ", password='" + password + '\'' +
+                ", newsletter=" + newsletter +
                 '}';
     }
 }

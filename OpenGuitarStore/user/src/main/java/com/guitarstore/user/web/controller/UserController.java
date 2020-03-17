@@ -31,7 +31,7 @@ public class UserController implements HealthIndicator {
         return Health.up().build();
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin
     @GetMapping("/findall")
     public List<User> findAll() {
 

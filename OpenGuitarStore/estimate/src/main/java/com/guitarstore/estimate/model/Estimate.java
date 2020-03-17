@@ -13,17 +13,15 @@ public class Estimate {
     public Estimate() {
     }
 
-    public Estimate(String estimate_name,
-                    String estimate_year,
-                    Integer costumer_id_costumer,
-                    Integer image_id_image) {
-        this.estimate_name = estimate_name;
-        this.estimate_year = estimate_year;
-        this.costumer_id_costumer = costumer_id_costumer;
-        this.image_id_image = image_id_image;
+    public Estimate(String estimatename,
+                    String estimateyear,
+                    Integer costumeridcostumer,
+                    Integer imageidimage) {
+        this.estimatename = estimatename;
+        this.estimateyear = estimateyear;
+        this.costumeridcostumer = costumeridcostumer;
+        this.imageidimage = imageidimage;
     }
-
-
 
     /**
      * ATTRIBUTS
@@ -32,62 +30,62 @@ public class Estimate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "guitarestimation_id")
-    private Integer estimate_id;
+    private Integer estimateid;
 
     @Column(name = "guitarestimation_name")
-    private String estimate_name;
+    private String estimatename;
 
     @Column(name = "guitarestimation_year")
-    private String estimate_year;
+    private String estimateyear;
 
     @Column(name = "costumer_id_costumer")
-    private Integer costumer_id_costumer;
+    private Integer costumeridcostumer;
 
     @Column(name = "image_id_image")
-    private Integer image_id_image;
+    private Integer imageidimage;
 
     /**
      * GETTERS AND SETTERS
      */
 
-    public Integer getEstimate_id() {
-        return estimate_id;
+    public Integer getEstimateid() {
+        return estimateid;
     }
 
-    public void setEstimate_id(Integer estimate_id) {
-        this.estimate_id = estimate_id;
+    public void setEstimateid(Integer estimateid) {
+        this.estimateid = estimateid;
     }
 
-    public String getEstimate_name() {
-        return estimate_name;
+    public String getEstimatename() {
+        return estimatename;
     }
 
-    public void setEstimate_name(String estimate_name) {
-        this.estimate_name = estimate_name;
+    public void setEstimatename(String estimatename) {
+        this.estimatename = estimatename;
     }
 
-    public String getEstimate_year() {
-        return estimate_year;
+    public String getEstimateyear() {
+        return estimateyear;
     }
 
-    public void setEstimate_year(String estimate_year) {
-        this.estimate_year = estimate_year;
+    public void setEstimateyear(String estimateyear) {
+        this.estimateyear = estimateyear;
     }
 
-    public Integer getCostumer_id_costumer() {
-        return costumer_id_costumer;
+    public Integer getCostumeridcostumer() {
+        return costumeridcostumer;
     }
 
-    public void setCostumer_id_costumer(Integer costumer_id_costumer) {
-        this.costumer_id_costumer = costumer_id_costumer;
+    public void setCostumeridcostumer(Integer costumeridcostumer) {
+        this.costumeridcostumer = costumeridcostumer;
     }
 
-    public Integer getImage_id_image() {
-        return image_id_image;
+    public Integer getImageidimage() {
+        return imageidimage;
     }
 
-    public void setImage_id_image(Integer image_id_image) {
-        this.image_id_image = image_id_image;
+    public void setImageidimage(Integer imageidimage) {
+        this.imageidimage = imageidimage;
     }
 
     /**
@@ -97,11 +95,11 @@ public class Estimate {
     @Override
     public String toString() {
         return "Estimate{" +
-                "estimate_id=" + estimate_id +
-                ", estimate_name='" + estimate_name + '\'' +
-                ", estimate_year='" + estimate_year + '\'' +
-                ", costumer_id_costumer=" + costumer_id_costumer +
-                ", image_id_image=" + image_id_image +
+                "estimateid=" + estimateid +
+                ", estimatename='" + estimatename + '\'' +
+                ", estimateyear='" + estimateyear + '\'' +
+                ", costumeridcostumer=" + costumeridcostumer +
+                ", imageidimage=" + imageidimage +
                 '}';
     }
 }

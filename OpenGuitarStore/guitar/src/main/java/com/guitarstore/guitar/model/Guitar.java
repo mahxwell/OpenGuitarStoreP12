@@ -13,21 +13,22 @@ public class Guitar {
     public Guitar() {
     }
 
-    public Guitar(String guitar_name,
-                  String guitar_description,
-                  Integer guitar_year,
-                  Integer image_id_image,
-                  Integer manufacturer_id_manufacturer,
-                  String guitar_price,
-                  boolean guitar_status) {
-        this.guitar_name = guitar_name;
-        this.guitar_description = guitar_description;
-        this.guitar_year = guitar_year;
-        this.image_id_image = image_id_image;
-        this.manufacturer_id_manufacturer = manufacturer_id_manufacturer;
-        this.guitar_price = guitar_price;
-        this.guitar_status = guitar_status;
+    public Guitar(String guitarname,
+                  String guitardescription,
+                  Integer guitaryear,
+                  String guitarprice,
+                  boolean guitarstatus,
+                  Integer imageidimage,
+                  Integer manufactureridmanufacturer) {
+        this.guitarname = guitarname;
+        this.guitardescription = guitardescription;
+        this.guitaryear = guitaryear;
+        this.guitarprice = guitarprice;
+        this.guitarstatus = guitarstatus;
+        this.imageidimage = imageidimage;
+        this.manufactureridmanufacturer = manufactureridmanufacturer;
     }
+
 
     /**
      * ATTRIBUTS
@@ -36,112 +37,112 @@ public class Guitar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "guitar_id")
-    private Integer guitar_id;
+    private Integer guitarid;
 
     @Column(name = "guitar_name")
-    private String guitar_name;
+    private String guitarname;
 
     @Column(name = "guitar_description")
-    private String guitar_description;
+    private String guitardescription;
 
     @Column(name = "guitar_year")
-    private Integer guitar_year;
+    private Integer guitaryear;
 
     @Column(name = "guitar_price")
-    private String guitar_price;
+    private String guitarprice;
 
     @Column(name = "guitar_status")
-    private boolean guitar_status;
+    private boolean guitarstatus;
 
     @Column(name = "image_id_image")
-    private Integer image_id_image;
+    private Integer imageidimage;
 
     @Column(name = "manufacturer_id_manufacturer")
-    private Integer manufacturer_id_manufacturer;
+    private Integer manufactureridmanufacturer;
 
 
     /**
      * GETTERS AND SETTERS
      */
-    public Integer getGuitar_id() {
-        return guitar_id;
+
+    public Integer getGuitarid() {
+        return guitarid;
     }
 
-    public void setGuitar_id(Integer guitar_id) {
-        this.guitar_id = guitar_id;
+    public void setGuitarid(Integer guitarid) {
+        this.guitarid = guitarid;
     }
 
-    public String getGuitar_name() {
-        return guitar_name;
+    public String getGuitarname() {
+        return guitarname;
     }
 
-    public void setGuitar_name(String guitar_name) {
-        this.guitar_name = guitar_name;
+    public void setGuitarname(String guitarname) {
+        this.guitarname = guitarname;
     }
 
-    public String getGuitar_description() {
-        return guitar_description;
+    public String getGuitardescription() {
+        return guitardescription;
     }
 
-    public void setGuitar_description(String guitar_description) {
-        this.guitar_description = guitar_description;
+    public void setGuitardescription(String guitardescription) {
+        this.guitardescription = guitardescription;
     }
 
-    public Integer getGuitar_year() {
-        return guitar_year;
+    public Integer getGuitaryear() {
+        return guitaryear;
     }
 
-    public void setGuitar_year(Integer guitar_year) {
-        this.guitar_year = guitar_year;
+    public void setGuitaryear(Integer guitaryear) {
+        this.guitaryear = guitaryear;
     }
 
-    public String getGuitar_price() {
-        return guitar_price;
+    public String getGuitarprice() {
+        return guitarprice;
     }
 
-    public void setGuitar_price(String guitar_price) {
-        this.guitar_price = guitar_price;
+    public void setGuitarprice(String guitarprice) {
+        this.guitarprice = guitarprice;
     }
 
-    public boolean isGuitar_status() {
-        return guitar_status;
+    public boolean isGuitarstatus() {
+        return guitarstatus;
     }
 
-    public void setGuitar_status(boolean guitar_status) {
-        this.guitar_status = guitar_status;
+    public void setGuitarstatus(boolean guitarstatus) {
+        this.guitarstatus = guitarstatus;
     }
 
-    public Integer getImage_id_image() {
-        return image_id_image;
+    public Integer getImageidimage() {
+        return imageidimage;
     }
 
-    public void setImage_id_image(Integer image_id_image) {
-        this.image_id_image = image_id_image;
+    public void setImageidimage(Integer imageidimage) {
+        this.imageidimage = imageidimage;
     }
 
-    public Integer getManufacturer_id_manufacturer() {
-        return manufacturer_id_manufacturer;
+    public Integer getManufactureridmanufacturer() {
+        return manufactureridmanufacturer;
     }
 
-    public void setManufacturer_id_manufacturer(Integer manufacturer_id_manufacturer) {
-        this.manufacturer_id_manufacturer = manufacturer_id_manufacturer;
+    public void setManufactureridmanufacturer(Integer manufactureridmanufacturer) {
+        this.manufactureridmanufacturer = manufactureridmanufacturer;
     }
 
     /**
      * TOSTRING
      */
-
     @Override
     public String toString() {
         return "Guitar{" +
-                "guitar_id=" + guitar_id +
-                ", guitar_name='" + guitar_name + '\'' +
-                ", guitar_description='" + guitar_description + '\'' +
-                ", guitar_year=" + guitar_year +
-                ", image_id_image=" + image_id_image +
-                ", manufacturer_id_manufacturer=" + manufacturer_id_manufacturer +
-                ", guitar_price=" + guitar_price +
-                ", guitar_status=" + guitar_status +
+                "guitarid=" + guitarid +
+                ", guitarname='" + guitarname + '\'' +
+                ", guitardescription='" + guitardescription + '\'' +
+                ", guitaryear=" + guitaryear +
+                ", guitarprice='" + guitarprice + '\'' +
+                ", guitarstatus=" + guitarstatus +
+                ", imageidimage=" + imageidimage +
+                ", manufactureridmanufacturer=" + manufactureridmanufacturer +
                 '}';
     }
 }
