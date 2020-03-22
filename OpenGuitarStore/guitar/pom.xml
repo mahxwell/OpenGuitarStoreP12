@@ -83,6 +83,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -115,5 +116,4 @@
             </snapshots>
         </repository>
     </repositories>
-
 </project>

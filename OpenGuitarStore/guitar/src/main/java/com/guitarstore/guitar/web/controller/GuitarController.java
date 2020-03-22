@@ -1,86 +1,98 @@
 package com.guitarstore.guitar.web.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.guitarstore.guitar.dao.GuitarDao;
+import com.guitarstore.guitar.dao.GuitarmodelDao;
 import com.guitarstore.guitar.model.Guitar;
-import com.guitarstore.guitar.web.exceptions.GuitarNotFoundException;
+import com.guitarstore.guitar.model.Guitarmodel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
 @RestController
 public class GuitarController implements HealthIndicator {
 
+    /**
+     * GUITAR CONTROLLER
+     */
+
     @Autowired
     GuitarDao guitarDao;
 
+    /**
+     * GUITARMODEL CONTROLLER
+     */
+
+    @Autowired
+    GuitarmodelDao guitarmodelDao;
+
+
+    /**
+     * Health Indicator
+     *
+     * @return
+     */
     @Override
     public Health health() {
 
-        List<Guitar> guitars= guitarDao.findAll();
+        List<Guitar> guitars = guitarDao.findAll();
 
-        if(guitars.isEmpty()) {
+        if (guitars.isEmpty()) {
             return Health.down().build();
         }
         return Health.up().build();
     }
 
-    // Affiche la liste de toutes les guitares disponibles
-    //Récupérer la liste des produits
-    @RequestMapping(value = "/Guitars", method = RequestMethod.GET)
-    public MappingJacksonValue listeProduits() {
-        Iterable<Guitar> guitars = guitarDao.findAll();
-
-        MappingJacksonValue produitsFiltres = new MappingJacksonValue(guitars);
-
-        // Return JSON String
-        return produitsFiltres;
-    }
-
-    //Récuperer un produit par son id
-    @GetMapping(value = "/Guitars/{id}")
-    public Optional<Guitar> recupererUnProduit(@PathVariable int id) {
-
-        Optional<Guitar> product = guitarDao.findById(id);
-
-        System.out.println("Test - " + product.toString());
-        if (!product.isPresent())
-            throw new GuitarNotFoundException("Le produit correspondant à l'id " + id + " n'existe pas");
-
-
-        return product;
-    }
-
+    /**
+     * Get All Guitars available in DB
+     *
+     * @return All guitar list
+     */
     @CrossOrigin
-    @GetMapping("/findall")
-    public List<Guitar> findAll() {
-
-        List<Guitar> customers = guitarDao.findAll();
-
-
-        return customers;
-
+    @RequestMapping(value = "/guitars", method = RequestMethod.GET)
+    public MappingJacksonValue getGuitars() {
+        Iterable<Guitar> guitars = guitarDao.findAll();
+        MappingJacksonValue guitarsFilter = new MappingJacksonValue(guitars);
+        return guitarsFilter;
     }
 
-    @PostMapping(value = "/Ajouter")
-    public void ajouterGuitare() {
 
-        Guitar guitar = new Guitar();
-        guitar.setGuitarname("yes");
-        guitar.setGuitardescription("yo");
-        guitar.setGuitarstatus(true);
-        guitarDao.save(guitar);
-        return;
+    /**
+     * Get One Guitar By Identification Number
+     *
+     * @param id Unique Guitar Identification Number
+     * @return MappingJacksonValue -> JSON with Guitar details AND Stocks Available
+     */
+    @CrossOrigin
+    @GetMapping(value = "/guitars/{id}")
+    public MappingJacksonValue showOneGuitar(@PathVariable int id) {
+        Guitar guitar = guitarDao.findById(id);
+        List<Guitarmodel> guitarmodel = guitarmodelDao.findStock(id);
+        Integer stockSize = guitarmodel.size();
+
+        ObjectMapper objectMapper =  new ObjectMapper();
+
+        Map<String, String> map =  objectMapper.convertValue(guitar, Map.class);
+
+        /**
+         * Adding stock row from another table (GuitarModel table)
+         */
+        Map<String, String> map2 = new HashMap<>();
+        map2.put("stock",stockSize.toString());
+
+        /**
+         * Merging two maps
+         */
+        map.putAll(map2);
+
+        MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(map);
+
+        return mappingJacksonValue;
     }
-
-    @DeleteMapping(value = "/supp/{id}")
-    public void supprimerGuitare(@PathVariable int id) {
-
-        guitarDao.deleteById(id);
-    }
-
 }
