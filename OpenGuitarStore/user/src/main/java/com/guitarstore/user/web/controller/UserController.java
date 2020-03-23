@@ -52,4 +52,15 @@ public class UserController implements HealthIndicator {
 
         return user;
     }
+
+    @CrossOrigin
+    @GetMapping(value = "/get/{mail}/{password}")
+    public User getUser(@PathVariable String mail, @PathVariable String password) {
+
+        User user = userDao.findByMailAndPassword(mail, password);
+        if (user == null) throw new UserNotFoundException("Mauvais Identifiants");
+        user.setPassword(null);
+        return user;
+    }
+
 }

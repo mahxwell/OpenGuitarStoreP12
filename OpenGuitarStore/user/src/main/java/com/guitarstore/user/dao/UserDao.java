@@ -10,6 +10,9 @@ import java.util.Optional;
 @Repository
 public interface UserDao extends JpaRepository<User, Integer> {
 
+
+    User findByMailAndPassword(String mail, String password);
+
     @Query("SELECT u FROM User u WHERE u.id = ?1")
     Optional<User> findit(int i);
 }
