@@ -27,3 +27,9 @@ INSERT INTO costumer (costumer_name, costumer_surname, costumer_pseudo, costumer
 INSERT INTO costumer (costumer_name, costumer_surname, costumer_pseudo, costumer_mail, costumer_password, costumer_newsletter) VALUES ('UserName3', 'UserSurname3', 'UserPseudo3', 'Usermail3@test', 'toto', false);
 INSERT INTO costumer (costumer_name, costumer_surname, costumer_pseudo, costumer_mail, costumer_password, costumer_newsletter) VALUES ('UserName4', 'UserSurname4', 'UserPseudo4', 'Usermail4@test', 'toto', false);
 INSERT INTO costumer (costumer_name, costumer_surname, costumer_pseudo, costumer_mail, costumer_password, costumer_newsletter) VALUES ('UserName5', 'UserSurname5', 'UserPseudo5', 'Usermail5@test', 'toto', false);
+
+INSERT INTO review (review_date, review_comment, review_note, review_costumer_name, guitar_id_guitar, costumer_id_costumer) VALUES ('03/05/19', 'Super Gratte', 8, 'UserName1', 1, 1);
+INSERT INTO review (review_date, review_comment, review_note, review_costumer_name, guitar_id_guitar, costumer_id_costumer) VALUES ('04/05/19', 'pas Top', 4, 'UserName2', 2, 2);
+INSERT INTO review (review_date, review_comment, review_note, review_costumer_name, guitar_id_guitar, costumer_id_costumer) VALUES ('05/05/19', 'Acceptable', 6, 'UserName3', 3, 3);
+INSERT INTO review (review_date, review_comment, review_note, review_costumer_name, guitar_id_guitar, costumer_id_costumer) VALUES ('06/05/19', ' NUl', 1, 'UserName4', 1, 4);
+INSERT INTO review (review_date, review_comment, review_note, review_costumer_name, guitar_id_guitar, costumer_id_costumer) VALUES ('07/05/19', 'Bon', 7, 'UserName5', 2, 5);

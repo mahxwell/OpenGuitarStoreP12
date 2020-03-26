@@ -1,7 +1,6 @@
 package com.guitarstore.review.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "review")
@@ -13,14 +12,16 @@ public class Review {
     public Review() {
     }
 
-    public Review(Date reviewdate,
+    public Review(String reviewdate,
                   String reviewcomment,
                   Integer reviewnote,
+                  String reviewcostumername,
                   Integer guitaridguitar,
                   Integer costumeridcostumer) {
         this.reviewdate = reviewdate;
         this.reviewcomment = reviewcomment;
         this.reviewnote = reviewnote;
+        this.reviewcostumername = reviewcostumername;
         this.guitaridguitar = guitaridguitar;
         this.costumeridcostumer = costumeridcostumer;
     }
@@ -35,13 +36,16 @@ public class Review {
     private Integer reviewid;
 
     @Column(name = "review_date")
-    private Date reviewdate;
+    private String reviewdate;
 
     @Column(name = "review_comment")
     private String reviewcomment;
 
     @Column(name = "review_note")
     private Integer reviewnote;
+
+    @Column(name = "review_costumer_name")
+    private String reviewcostumername;
 
     @Column(name = "guitar_id_guitar")
     private Integer guitaridguitar;
@@ -53,7 +57,6 @@ public class Review {
      * GETTERS AND SETTERS
      */
 
-
     public Integer getReviewid() {
         return reviewid;
     }
@@ -62,11 +65,11 @@ public class Review {
         this.reviewid = reviewid;
     }
 
-    public Date getReviewdate() {
+    public String getReviewdate() {
         return reviewdate;
     }
 
-    public void setReviewdate(Date reviewdate) {
+    public void setReviewdate(String reviewdate) {
         this.reviewdate = reviewdate;
     }
 
@@ -84,6 +87,14 @@ public class Review {
 
     public void setReviewnote(Integer reviewnote) {
         this.reviewnote = reviewnote;
+    }
+
+    public String getReviewcostumername() {
+        return reviewcostumername;
+    }
+
+    public void setReviewcostumername(String reviewcostumername) {
+        this.reviewcostumername = reviewcostumername;
     }
 
     public Integer getGuitaridguitar() {
@@ -110,9 +121,10 @@ public class Review {
     public String toString() {
         return "Review{" +
                 "reviewid=" + reviewid +
-                ", reviewdate=" + reviewdate +
+                ", reviewdate='" + reviewdate + '\'' +
                 ", reviewcomment='" + reviewcomment + '\'' +
                 ", reviewnote=" + reviewnote +
+                ", reviewcostumername='" + reviewcostumername + '\'' +
                 ", guitaridguitar=" + guitaridguitar +
                 ", costumeridcostumer=" + costumeridcostumer +
                 '}';

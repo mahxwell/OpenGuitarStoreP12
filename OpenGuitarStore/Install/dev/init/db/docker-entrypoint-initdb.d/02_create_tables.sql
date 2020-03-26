@@ -6,7 +6,7 @@ CREATE TABLE public.costumer (
 	costumer_pseudo varchar NOT NULL,
 	costumer_mail varchar NOT NULL,
 	costumer_password varchar NOT NULL,
-	costumer_newsletter boolean NOT NULL,
+	costumer_newsletter boolean,
 	CONSTRAINT costumer_pk PRIMARY KEY (costumer_id)
 
 );
@@ -81,13 +81,13 @@ CREATE TABLE public.image (
 
 CREATE TABLE public.review (
 	review_id serial NOT NULL,
-	review_date date,
-	review_comment varchar,
-	review_note integer,
+	review_date varchar NOT NULL,
+	review_comment varchar  NOT NULL,
+	review_note integer  NOT NULL,
+	review_costumer_name varchar  NOT NULL,
 	guitar_id_guitar integer,
 	costumer_id_costumer integer,
 	CONSTRAINT review_pk PRIMARY KEY (review_id)
-	
 );
 
 
