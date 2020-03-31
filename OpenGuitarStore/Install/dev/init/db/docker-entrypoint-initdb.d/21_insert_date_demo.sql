@@ -1,15 +1,10 @@
-INSERT INTO image(image_url) VALUES ('imagegibson');
-INSERT INTO image(image_url) VALUES ('imagefender');
-INSERT INTO image(image_url) VALUES ('imagegretsch');
-
-
 INSERT INTO manufacturer(manufacturer_name, manufacturer_mail, manufacturer_phone) VALUES ('Gibson', 'gibson@mail', '555');
 INSERT INTO manufacturer(manufacturer_name, manufacturer_mail, manufacturer_phone) VALUES ('Fender', 'fender@mail', '666');
 INSERT INTO manufacturer(manufacturer_name, manufacturer_mail, manufacturer_phone) VALUES ('Gretsch', 'gretsch@mail', '777');
 
-INSERT INTO guitar (guitar_name, guitar_description, guitar_year, guitar_status, guitar_price, manufacturer_id_manufacturer, image_id_image) VALUES ('Les Paul', 'Cool pour le rock', 2010, true, '2000 euros', 1, 1);
-INSERT INTO guitar (guitar_name, guitar_description, guitar_year, guitar_status, guitar_price, manufacturer_id_manufacturer, image_id_image) VALUES ('Stratocaster', 'Cool pour alternative rock', 2015, true, '1200 euros', 2, 2);
-INSERT INTO guitar (guitar_name, guitar_description, guitar_year, guitar_status, guitar_price, manufacturer_id_manufacturer, image_id_image) VALUES ('White Penguin', 'La plus belle', 2018, true, '3000 euros', 3, 3);
+INSERT INTO guitar (guitar_name,guitar_brand, guitar_description, guitar_year, guitar_status, guitar_price, guitar_image_url, manufacturer_id_manufacturer) VALUES ('Les Paul','Gibson', 'Cool pour le rock', 2010, true, '2000 euros', 'assets/images/lespaul.jpg', 1);
+INSERT INTO guitar (guitar_name,guitar_brand, guitar_description, guitar_year, guitar_status, guitar_price, guitar_image_url, manufacturer_id_manufacturer) VALUES ('Stratocaster','Fender', 'Cool pour alternative rock', 2015, true, '1200 euros', 'assets/images/stratocaster.jpg', 2);
+INSERT INTO guitar (guitar_name,guitar_brand, guitar_description, guitar_year, guitar_status, guitar_price, guitar_image_url, manufacturer_id_manufacturer) VALUES ('White Penguin','Gretsch', 'La plus belle', 2018, true, '3000 euros', 'assets/images/whitepenguin.jpg', 3);
 
 INSERT INTO guitarmodel (guitar_id_guitar) VALUES (1);
 INSERT INTO guitarmodel (guitar_id_guitar) VALUES (1);

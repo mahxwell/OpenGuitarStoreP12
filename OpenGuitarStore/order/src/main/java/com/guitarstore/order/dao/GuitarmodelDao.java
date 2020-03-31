@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface GuitarmodelDao extends JpaRepository<Guitarmodel, Integer> {
 
-        List<Guitarmodel> findGuitarmodelsByGuitaridguitarOrderByGuitarmodelid(@PathVariable int guitaridguitar);
+    List<Guitarmodel> findGuitarmodelsByGuitaridguitarOrderByGuitarmodelid(@PathVariable int guitaridguitar);
 }

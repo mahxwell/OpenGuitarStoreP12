@@ -11,6 +11,7 @@ import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -53,6 +54,18 @@ public class OrderController implements HealthIndicator {
         return orders;
     }
 
+    @CrossOrigin
+    @GetMapping("/welcomeorder")
+    public List<Guitar> getGuitarByOrder() {
+
+        List<Guitar> guitars = guitarDao.findAll();
+        List<Guitar> guitarsToThree = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            guitarsToThree.add(guitars.get(i));
+        }
+
+        return guitarsToThree;
+    }
 
     /**
      * Adding a New Order => Delete One GuitarModel Obj FROM Stock

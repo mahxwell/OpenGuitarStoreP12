@@ -42,12 +42,13 @@ CREATE TABLE public.guitarmodel (
 CREATE TABLE public.guitar (
 	guitar_id serial NOT NULL,
 	guitar_name varchar NOT NULL,
+	guitar_brand varchar NOT NULL,
 	guitar_description varchar NOT NULL,
 	guitar_year smallint NOT NULL,
 	guitar_status boolean NOT NULL,
 	guitar_price varchar NOT NULL,
+	guitar_image_url varchar NOT NULL,
 	manufacturer_id_manufacturer integer NOT NULL,
-	image_id_image integer NOT NULL,
 	CONSTRAINT guitar_pk PRIMARY KEY (guitar_id)
 
 );
@@ -68,18 +69,10 @@ CREATE TABLE public.guitarestimation (
 	guitarestimation_name varchar NOT NULL,
 	guitarestimation_year varchar NOT NULL,
 	costumer_id_costumer integer,
-	image_id_image integer,
 	CONSTRAINT guitarestimation_pk PRIMARY KEY (guitarestimation_id)
 
 );
 
-
-CREATE TABLE public.image (
-	image_id serial NOT NULL,
-	image_url varchar,
-	CONSTRAINT image_pk PRIMARY KEY (image_id)
-
-);
 
 CREATE TABLE public.review (
 	review_id serial NOT NULL,
@@ -102,11 +95,6 @@ ALTER TABLE public.costumerorder ADD CONSTRAINT costumer_fk FOREIGN KEY (costume
 REFERENCES public.costumer (costumer_id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 
---ALTER TABLE public.costumerorder ADD CONSTRAINT guitarmodel_fk FOREIGN KEY (guitarmodel_id_guitarmodel)
---REFERENCES public.guitarmodel (guitarmodel_id) MATCH FULL
---ON DELETE SET NULL ON UPDATE CASCADE;
-
---ALTER TABLE public.costumerorder ADD CONSTRAINT costumerorder_uq UNIQUE (guitarmodel_id_guitarmodel);
 
 ALTER TABLE public.guitarmodel ADD CONSTRAINT guitar_fk FOREIGN KEY (guitar_id_guitar)
 REFERENCES public.guitar (guitar_id) MATCH FULL
@@ -116,22 +104,12 @@ ALTER TABLE public.guitar ADD CONSTRAINT manufacturer_fk FOREIGN KEY (manufactur
 REFERENCES public.manufacturer (manufacturer_id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 
-ALTER TABLE public.guitar ADD CONSTRAINT image_fk FOREIGN KEY (image_id_image)
-REFERENCES public.image (image_id) MATCH FULL
-ON DELETE SET NULL ON UPDATE CASCADE;
 
-ALTER TABLE public.guitar ADD CONSTRAINT guitar_uq UNIQUE (image_id_image);
 
 ALTER TABLE public.guitarestimation ADD CONSTRAINT costumer_fk FOREIGN KEY (costumer_id_costumer)
 REFERENCES public.costumer (costumer_id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 
-ALTER TABLE public.guitarestimation ADD CONSTRAINT image_fk FOREIGN KEY (image_id_image)
-REFERENCES public.image (image_id) MATCH FULL
-ON DELETE SET NULL ON UPDATE CASCADE;
-
-
-ALTER TABLE public.guitarestimation ADD CONSTRAINT guitarestimation_uq UNIQUE (image_id_image);
 
 ALTER TABLE public.reservation ADD CONSTRAINT guitar_fk FOREIGN KEY (guitar_id_guitar)
 REFERENCES public.guitar (guitar_id) MATCH FULL

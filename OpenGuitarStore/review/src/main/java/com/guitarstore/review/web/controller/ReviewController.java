@@ -27,12 +27,11 @@ public class ReviewController implements HealthIndicator {
     }
 
     @CrossOrigin
-    @GetMapping("/findall")
-    public Review findAll() {
+    @GetMapping("/reviews")
+    public List<Review> findAll() {
 
-        List<Review> customers = reviewDao.findAll();
-        System.out.println(customers);
-        return customers.get(0);
+        List<Review> reviews = reviewDao.findAll();
+        return reviews;
 
     }
 
@@ -43,6 +42,25 @@ public class ReviewController implements HealthIndicator {
         return reviews;
     }
 
+    @CrossOrigin
+    @GetMapping("/reviews/average/{guitaridguitar}")
+    public Integer getReviewsAverageByGuitar(@PathVariable int guitaridguitar) {
+        List<Review> reviews = reviewDao.getReviewsByGuitarId(guitaridguitar);
+
+        int finale = 0;
+        if (!reviews.isEmpty()) {
+            int result = 0;
+            int n = reviews.size();
+            for (int i = 0; i < n; i++) {
+                result = result + reviews.get(i).getReviewnote();
+            }
+
+            finale = result / n;
+        }
+        return finale;
+    }
+
+
     /**
      * Add a New Review to DataBase
      *
@@ -52,7 +70,7 @@ public class ReviewController implements HealthIndicator {
     @CrossOrigin
     @PostMapping(value = "/addreview")
     public Void addUser(@RequestBody Review review) {
-            reviewDao.save(review);
-            return null;
+        reviewDao.save(review);
+        return null;
     }
 }

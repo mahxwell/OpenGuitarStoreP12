@@ -14,21 +14,22 @@ public class Guitar {
     }
 
     public Guitar(String guitarname,
+                  String guitarbrand,
                   String guitardescription,
                   Integer guitaryear,
                   String guitarprice,
                   boolean guitarstatus,
-                  Integer imageidimage,
+                  String guitarimageurl,
                   Integer manufactureridmanufacturer) {
         this.guitarname = guitarname;
+        this.guitarbrand = guitarbrand;
         this.guitardescription = guitardescription;
         this.guitaryear = guitaryear;
         this.guitarprice = guitarprice;
         this.guitarstatus = guitarstatus;
-        this.imageidimage = imageidimage;
+        this.guitarimageurl = guitarimageurl;
         this.manufactureridmanufacturer = manufactureridmanufacturer;
     }
-
 
     /**
      * ATTRIBUTS
@@ -42,6 +43,9 @@ public class Guitar {
     @Column(name = "guitar_name")
     private String guitarname;
 
+    @Column(name = "guitar_brand")
+    private String guitarbrand;
+
     @Column(name = "guitar_description")
     private String guitardescription;
 
@@ -54,8 +58,8 @@ public class Guitar {
     @Column(name = "guitar_status")
     private boolean guitarstatus;
 
-    @Column(name = "image_id_image")
-    private Integer imageidimage;
+    @Column(name = "guitar_image_url")
+    private String guitarimageurl;
 
     @Column(name = "manufacturer_id_manufacturer")
     private Integer manufactureridmanufacturer;
@@ -64,7 +68,6 @@ public class Guitar {
     /**
      * GETTERS AND SETTERS
      */
-
     public Integer getGuitarid() {
         return guitarid;
     }
@@ -79,6 +82,14 @@ public class Guitar {
 
     public void setGuitarname(String guitarname) {
         this.guitarname = guitarname;
+    }
+
+    public String getGuitarbrand() {
+        return guitarbrand;
+    }
+
+    public void setGuitarbrand(String guitarbrand) {
+        this.guitarbrand = guitarbrand;
     }
 
     public String getGuitardescription() {
@@ -113,12 +124,12 @@ public class Guitar {
         this.guitarstatus = guitarstatus;
     }
 
-    public Integer getImageidimage() {
-        return imageidimage;
+    public String getGuitarimageurl() {
+        return guitarimageurl;
     }
 
-    public void setImageidimage(Integer imageidimage) {
-        this.imageidimage = imageidimage;
+    public void setGuitarimageurl(String guitarimageurl) {
+        this.guitarimageurl = guitarimageurl;
     }
 
     public Integer getManufactureridmanufacturer() {
@@ -132,16 +143,18 @@ public class Guitar {
     /**
      * TOSTRING
      */
+
     @Override
     public String toString() {
         return "Guitar{" +
                 "guitarid=" + guitarid +
                 ", guitarname='" + guitarname + '\'' +
+                ", guitarbrand='" + guitarbrand + '\'' +
                 ", guitardescription='" + guitardescription + '\'' +
                 ", guitaryear=" + guitaryear +
                 ", guitarprice='" + guitarprice + '\'' +
                 ", guitarstatus=" + guitarstatus +
-                ", imageidimage=" + imageidimage +
+                ", guitarimageurl='" + guitarimageurl + '\'' +
                 ", manufactureridmanufacturer=" + manufactureridmanufacturer +
                 '}';
     }
