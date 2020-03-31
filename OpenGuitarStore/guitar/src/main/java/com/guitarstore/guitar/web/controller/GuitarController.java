@@ -76,15 +76,15 @@ public class GuitarController implements HealthIndicator {
         List<Guitarmodel> guitarmodel = guitarmodelDao.findStock(id);
         Integer stockSize = guitarmodel.size();
 
-        ObjectMapper objectMapper =  new ObjectMapper();
+        ObjectMapper objectMapper = new ObjectMapper();
 
-        Map<String, String> map =  objectMapper.convertValue(guitar, Map.class);
+        Map<String, String> map = objectMapper.convertValue(guitar, Map.class);
 
         /**
          * Adding stock row from another table (GuitarModel table)
          */
         Map<String, String> map2 = new HashMap<>();
-        map2.put("stock",stockSize.toString());
+        map2.put("stock", stockSize.toString());
 
         /**
          * Merging two maps
@@ -94,5 +94,11 @@ public class GuitarController implements HealthIndicator {
         MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(map);
 
         return mappingJacksonValue;
+    }
+
+    @CrossOrigin
+    @GetMapping(value = "guitars/search/{search}")
+    public List<Guitar> searchGuitarByName(@PathVariable String search) {
+        return guitarDao.findGuitarByGuitarnameLike("%" + search + "%");
     }
 }

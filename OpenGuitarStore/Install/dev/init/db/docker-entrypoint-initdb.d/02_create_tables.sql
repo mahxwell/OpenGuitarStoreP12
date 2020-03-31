@@ -22,8 +22,10 @@ CREATE TABLE public.reservation (
 
 CREATE TABLE public.costumerorder (
 	costumerorder_id serial NOT NULL,
-	costumerorder_date timestamp,
-	costumerorder_delivery_date date,
+	costumerorder_date varchar,
+	costumerorder_delivery_date varchar,
+	guitar_name varchar,
+	guitar_id_guitar integer,
 	costumer_id_costumer integer,
 	guitarmodel_id_guitarmodel integer,
 	CONSTRAINT costumerorder_pk PRIMARY KEY (costumerorder_id)
@@ -100,11 +102,11 @@ ALTER TABLE public.costumerorder ADD CONSTRAINT costumer_fk FOREIGN KEY (costume
 REFERENCES public.costumer (costumer_id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 
-ALTER TABLE public.costumerorder ADD CONSTRAINT guitarmodel_fk FOREIGN KEY (guitarmodel_id_guitarmodel)
-REFERENCES public.guitarmodel (guitarmodel_id) MATCH FULL
-ON DELETE SET NULL ON UPDATE CASCADE;
+--ALTER TABLE public.costumerorder ADD CONSTRAINT guitarmodel_fk FOREIGN KEY (guitarmodel_id_guitarmodel)
+--REFERENCES public.guitarmodel (guitarmodel_id) MATCH FULL
+--ON DELETE SET NULL ON UPDATE CASCADE;
 
-ALTER TABLE public.costumerorder ADD CONSTRAINT costumerorder_uq UNIQUE (guitarmodel_id_guitarmodel);
+--ALTER TABLE public.costumerorder ADD CONSTRAINT costumerorder_uq UNIQUE (guitarmodel_id_guitarmodel);
 
 ALTER TABLE public.guitarmodel ADD CONSTRAINT guitar_fk FOREIGN KEY (guitar_id_guitar)
 REFERENCES public.guitar (guitar_id) MATCH FULL

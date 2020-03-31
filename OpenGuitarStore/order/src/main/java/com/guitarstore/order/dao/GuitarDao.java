@@ -1,15 +1,10 @@
-package com.guitarstore.guitar.dao;
+package com.guitarstore.order.dao;
 
-import com.guitarstore.guitar.model.Guitar;
+import com.guitarstore.order.model.Guitar;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
 public interface GuitarDao extends JpaRepository<Guitar, Integer> {
-
     Guitar findById(int id);
-
-    List<Guitar> findGuitarByGuitarnameLike(String search);
 }
