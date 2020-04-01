@@ -14,6 +14,10 @@ CREATE TABLE public.costumer (
 
 CREATE TABLE public.reservation (
 	reservation_id serial NOT NULL,
+	guitar_brand varchar NOT NULL,
+	guitar_name varchar NOT NULL,
+	guitar_image_url varchar NOT NULL,
+	delivery_date varchar NOT NULL,
 	costumer_id_costumer integer,
 	guitar_id_guitar integer,
 	CONSTRAINT reservation_pk PRIMARY KEY (reservation_id)
@@ -22,12 +26,13 @@ CREATE TABLE public.reservation (
 
 CREATE TABLE public.costumerorder (
 	costumerorder_id serial NOT NULL,
-	costumerorder_date varchar,
-	costumerorder_delivery_date varchar,
-	guitar_name varchar,
-	guitar_id_guitar integer,
-	costumer_id_costumer integer,
-	guitarmodel_id_guitarmodel integer,
+	costumerorder_date varchar NOT NULL,
+	costumerorder_delivery_date varchar NOT NULL,
+	guitar_name varchar NOT NULL,
+	guitar_image_url varchar NOT NULL,
+	guitar_id_guitar integer NOT NULL,
+	costumer_id_costumer integer NOT NULL,
+	guitarmodel_id_guitarmodel integer NOT NULL,
 	CONSTRAINT costumerorder_pk PRIMARY KEY (costumerorder_id)
 
 );

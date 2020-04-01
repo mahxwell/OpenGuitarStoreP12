@@ -16,12 +16,14 @@ public class Order {
     public Order(String orderdate,
                  String orderdeliverydate,
                  String guitarneme,
+                 String guitarimageurl,
                  Integer guitaridguitar,
                  Integer costumeridcostumer,
                  Integer guitarmodelidguitarmodel) {
         this.orderdate = orderdate;
         this.orderdeliverydate = orderdeliverydate;
         this.guitarneme = guitarneme;
+        this.guitarimageurl = guitarimageurl;
         this.guitaridguitar = guitaridguitar;
         this.costumeridcostumer = costumeridcostumer;
         this.guitarmodelidguitarmodel = guitarmodelidguitarmodel;
@@ -44,6 +46,9 @@ public class Order {
 
     @Column(name = "guitar_name")
     private String guitarneme;
+
+    @Column(name = "guitar_image_url")
+    private String guitarimageurl;
 
     @Column(name = "guitar_id_guitar")
     private Integer guitaridguitar;
@@ -90,6 +95,14 @@ public class Order {
         this.guitarneme = guitarneme;
     }
 
+    public String getGuitarimageurl() {
+        return guitarimageurl;
+    }
+
+    public void setGuitarimageurl(String guitarimageurl) {
+        this.guitarimageurl = guitarimageurl;
+    }
+
     public Integer getGuitaridguitar() {
         return guitaridguitar;
     }
@@ -125,6 +138,7 @@ public class Order {
                 ", orderdate='" + orderdate + '\'' +
                 ", orderdeliverydate='" + orderdeliverydate + '\'' +
                 ", guitarneme='" + guitarneme + '\'' +
+                ", guitarimageurl='" + guitarimageurl + '\'' +
                 ", guitaridguitar=" + guitaridguitar +
                 ", costumeridcostumer=" + costumeridcostumer +
                 ", guitarmodelidguitarmodel=" + guitarmodelidguitarmodel +

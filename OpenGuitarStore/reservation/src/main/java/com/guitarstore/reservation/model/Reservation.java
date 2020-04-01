@@ -12,7 +12,16 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Integer costumeridcostumer, Integer guitaridguitar) {
+    public Reservation(String guitarbrand,
+                       String guitarname,
+                       String guitarimageurl,
+                       String deliverydate,
+                       Integer costumeridcostumer,
+                       Integer guitaridguitar) {
+        this.guitarbrand = guitarbrand;
+        this.guitarname = guitarname;
+        this.guitarimageurl = guitarimageurl;
+        this.deliverydate = deliverydate;
         this.costumeridcostumer = costumeridcostumer;
         this.guitaridguitar = guitaridguitar;
     }
@@ -26,6 +35,18 @@ public class Reservation {
     @Column(name = "reservation_id")
     private Integer reservationid;
 
+    @Column(name = "guitar_brand")
+    private String guitarbrand;
+
+    @Column(name = "guitar_name")
+    private String guitarname;
+
+    @Column(name = "guitar_image_url")
+    private String guitarimageurl;
+
+    @Column(name = "delivery_date")
+    private String deliverydate;
+
     @Column(name = "costumer_id_costumer")
     private Integer costumeridcostumer;
 
@@ -37,13 +58,44 @@ public class Reservation {
      * GETTERS AND SETTERS
      */
 
-
     public Integer getReservationid() {
         return reservationid;
     }
 
     public void setReservationid(Integer reservationid) {
         this.reservationid = reservationid;
+    }
+
+    public String getGuitarbrand() {
+        return guitarbrand;
+    }
+
+    public void setGuitarbrand(String guitarbrand) {
+        this.guitarbrand = guitarbrand;
+    }
+
+    public String getGuitarname() {
+        return guitarname;
+    }
+
+    public void setGuitarname(String guitarname) {
+        this.guitarname = guitarname;
+    }
+
+    public String getGuitarimageurl() {
+        return guitarimageurl;
+    }
+
+    public void setGuitarimageurl(String guitarimageurl) {
+        this.guitarimageurl = guitarimageurl;
+    }
+
+    public String getDeliverydate() {
+        return deliverydate;
+    }
+
+    public void setDeliverydate(String deliverydate) {
+        this.deliverydate = deliverydate;
     }
 
     public Integer getCostumeridcostumer() {
@@ -70,6 +122,10 @@ public class Reservation {
     public String toString() {
         return "Reservation{" +
                 "reservationid=" + reservationid +
+                ", guitarbrand=" + guitarbrand +
+                ", guitarname=" + guitarname +
+                ", guitarimageurl=" + guitarimageurl +
+                ", deliverydate=" + deliverydate +
                 ", costumeridcostumer=" + costumeridcostumer +
                 ", guitaridguitar=" + guitaridguitar +
                 '}';

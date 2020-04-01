@@ -11,7 +11,9 @@ import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -75,19 +77,50 @@ public class OrderController implements HealthIndicator {
     @CrossOrigin
     @PostMapping("/orders/add/{guitarid}/{userid}")
     public void addOrder(@PathVariable int guitarid, @PathVariable int userid) {
+
+        /**
+         * Find FIRST Guitarmodel with given Guitar id
+         */
         Order order = new Order();
         List<Guitarmodel> guitarmodels = guitarmodelDao.findGuitarmodelsByGuitaridguitarOrderByGuitarmodelid(guitarid);
+
+        /**
+         * Find Guitar with given Guitar id
+         */
         Guitar guitar = guitarDao.findById(guitarid);
+
+        /**
+         * Create two Date
+         * dateNowStr => Date now
+         * dateToDelivery => Date of expected delivery (Add 3 days for shipping => just an example here)
+         */
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        String dateNowStr = format.format(new Date());
+
         Date d = new Date();
-        String date = d.toString();
+        Calendar c = Calendar.getInstance();
+        c.setTime(d);
+        c.add(Calendar.DATE, 3);
+        d = c.getTime();
+        String dateToDelivery = format.format(d);
+
+        /**
+         * Set Order Object
+         */
+
         if (guitarmodels != null && guitar != null) {
             order.setGuitarmodelidguitarmodel(guitarmodels.get(0).getGuitarmodelid());
             order.setGuitaridguitar(guitarid);
             order.setGuitarneme(guitar.getGuitarname());
-            order.setOrderdate(date);
-            order.setOrderdeliverydate(date);
+            order.setGuitarimageurl(guitar.getGuitarimageurl());
+            order.setOrderdate(dateNowStr);
+            order.setOrderdeliverydate(dateToDelivery);
             order.setCostumeridcostumer(userid);
         }
+
+        /**
+         * Add Order Object previously set to Database
+         */
         orderDao.save(order);
     }
 
