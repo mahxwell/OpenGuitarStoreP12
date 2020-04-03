@@ -17,38 +17,62 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Rest Controller for Order MicroService
+ */
 @RestController
 public class OrderController implements HealthIndicator {
 
+    /**
+     * Order Dao
+     */
     @Autowired
     OrderDao orderDao;
 
+    /**
+     * Guitarmodel Dao
+     */
     @Autowired
     GuitarmodelDao guitarmodelDao;
 
+    /**
+     * Guitar Dao
+     */
     @Autowired
     GuitarDao guitarDao;
 
+    /**
+     * Health Indicator
+     *
+     * @return
+     */
     @Override
     public Health health() {
-
         List<Order> orders = orderDao.findAll();
-
         if (orders.isEmpty()) {
             return Health.down().build();
         }
         return Health.up().build();
     }
 
+    /**
+     * Get All Orders (Used just for testing)
+     *
+     * @return
+     */
     @CrossOrigin
     @GetMapping("/orders")
     public List<Order> getOrders() {
-
         List<Order> orders = orderDao.findAll();
         return orders;
-
     }
 
+    /**
+     * Get All Orders By User id
+     *
+     * @param userid
+     * @return
+     */
     @CrossOrigin
     @GetMapping("/orders/{userid}")
     public List<Order> getOrdersByUser(@PathVariable int userid) {
@@ -56,24 +80,35 @@ public class OrderController implements HealthIndicator {
         return orders;
     }
 
+    /**
+     * Get Order For Welcome Menu
+     *
+     * @return
+     */
     @CrossOrigin
     @GetMapping("/welcomeorder")
     public List<Guitar> getGuitarByOrder() {
-
         List<Guitar> guitars = guitarDao.findAll();
         List<Guitar> guitarsToThree = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             guitarsToThree.add(guitars.get(i));
         }
-
         return guitarsToThree;
     }
 
     /**
-     * Adding a New Order => Delete One GuitarModel Obj FROM Stock
+     * ADDING A NEW ORDER : Two Part of Adding a New Order :
+     * => Add a New Order
+     * THEN
+     * =>Delete One GuitarModel Obj FROM Stock
      */
 
-
+    /**
+     * First Add a New Order To Database
+     *
+     * @param guitarid
+     * @param userid
+     */
     @CrossOrigin
     @PostMapping("/orders/add/{guitarid}/{userid}")
     public void addOrder(@PathVariable int guitarid, @PathVariable int userid) {
@@ -124,7 +159,11 @@ public class OrderController implements HealthIndicator {
         orderDao.save(order);
     }
 
-
+    /**
+     * Then Delete ONE Guitarmodel From guitarmodel Table => Minus one in Guitar Stock
+     *
+     * @param guitarid
+     */
     @CrossOrigin
     @DeleteMapping("/orders/modeldelete/{guitarid}")
     public void deleteGuitarModelForOrder(@PathVariable int guitarid) {
@@ -140,12 +179,29 @@ public class OrderController implements HealthIndicator {
      * Deleting a Existing Order => Add One GuitarModel Obj TO Stock
      */
 
+    /**
+     * DELETING AN ORDER : Two Part of Deleting an Order :
+     * => Delete an Order
+     * THEN
+     * =>Add One GuitarModel Obj TO Stock
+     */
+
+    /**
+     * Delete Order by Id From Database
+     *
+     * @param id
+     */
     @CrossOrigin
     @DeleteMapping("/orders/delete/{id}")
     public void deleteOrder(@PathVariable int id) {
         orderDao.deleteById(id);
     }
 
+    /**
+     * Adding ('Re-adding') guitarmodel of Deleted Order to Database
+     *
+     * @param guitarmodel
+     */
     @CrossOrigin
     @PostMapping("/orders/modeladd")
     public void addModel(@RequestBody Guitarmodel guitarmodel) {

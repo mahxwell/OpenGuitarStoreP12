@@ -14,15 +14,29 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Rest Controller for Reservation MicroService
+ */
 @RestController
 public class ReservationController implements HealthIndicator {
 
+    /**
+     * Reservation Dao
+     */
     @Autowired
     ReservationDao reservationDao;
 
+    /**
+     * Guitar Dao
+     */
     @Autowired
     GuitarDao guitarDao;
 
+    /**
+     * Health Indicator
+     *
+     * @return
+     */
     @Override
     public Health health() {
 
@@ -41,7 +55,7 @@ public class ReservationController implements HealthIndicator {
      */
     @CrossOrigin
     @GetMapping("/reservations")
-    public List<Reservation> findAll() {
+    public List<Reservation> reservations() {
         List<Reservation> reservations = reservationDao.findAll();
         return reservations;
     }

@@ -68,17 +68,6 @@ CREATE TABLE public.manufacturer (
 
 );
 
-
-CREATE TABLE public.guitarestimation (
-	guitarestimation_id serial NOT NULL,
-	guitarestimation_name varchar NOT NULL,
-	guitarestimation_year varchar NOT NULL,
-	costumer_id_costumer integer,
-	CONSTRAINT guitarestimation_pk PRIMARY KEY (guitarestimation_id)
-
-);
-
-
 CREATE TABLE public.review (
 	review_id serial NOT NULL,
 	review_date varchar NOT NULL,
@@ -108,13 +97,6 @@ ON DELETE SET NULL ON UPDATE CASCADE;
 ALTER TABLE public.guitar ADD CONSTRAINT manufacturer_fk FOREIGN KEY (manufacturer_id_manufacturer)
 REFERENCES public.manufacturer (manufacturer_id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
-
-
-
-ALTER TABLE public.guitarestimation ADD CONSTRAINT costumer_fk FOREIGN KEY (costumer_id_costumer)
-REFERENCES public.costumer (costumer_id) MATCH FULL
-ON DELETE SET NULL ON UPDATE CASCADE;
-
 
 ALTER TABLE public.reservation ADD CONSTRAINT guitar_fk FOREIGN KEY (guitar_id_guitar)
 REFERENCES public.guitar (guitar_id) MATCH FULL

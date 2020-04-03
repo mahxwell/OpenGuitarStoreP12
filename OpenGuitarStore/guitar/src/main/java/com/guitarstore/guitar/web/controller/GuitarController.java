@@ -19,16 +19,14 @@ import java.util.Map;
 public class GuitarController implements HealthIndicator {
 
     /**
-     * GUITAR CONTROLLER
+     * Guitar Dao
      */
-
     @Autowired
     GuitarDao guitarDao;
 
     /**
-     * GUITARMODEL CONTROLLER
+     * GuitarModel Dao
      */
-
     @Autowired
     GuitarmodelDao guitarmodelDao;
 
@@ -96,6 +94,12 @@ public class GuitarController implements HealthIndicator {
         return mappingJacksonValue;
     }
 
+    /**
+     * Search And Find ALl Guitars by Name like input
+     *
+     * @param search Input String
+     * @return
+     */
     @CrossOrigin
     @GetMapping(value = "guitars/search/{search}")
     public List<Guitar> searchGuitarByName(@PathVariable String search) {

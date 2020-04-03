@@ -14,12 +14,23 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Rest Controller for User MicroService
+ */
 @RestController
 public class UserController implements HealthIndicator {
 
+    /**
+     * User Dao
+     */
     @Autowired
     UserDao userDao;
 
+    /**
+     * Health Indicator
+     *
+     * @return
+     */
     @Override
     public Health health() {
 
@@ -32,17 +43,15 @@ public class UserController implements HealthIndicator {
     }
 
     /**
-     * Get All Users
+     * Get All Users (Used just for testing)
      *
      * @return
      */
     @CrossOrigin
     @GetMapping("/findall")
     public List<User> findAll() {
-
-        List<User> customers = userDao.findAll();
-        return customers;
-
+        List<User> users = userDao.findAll();
+        return users;
     }
 
 
@@ -53,13 +62,11 @@ public class UserController implements HealthIndicator {
      * @return
      */
     @GetMapping(value = "/user/{id}")
-    public Optional<User> recupererUnUser(@PathVariable int id) {
+    public Optional<User> getOneUser(@PathVariable int id) {
 
         Optional<User> user = userDao.findit(id);
-
         if (!user.isPresent())
             throw new UserNotFoundException("L utilisateur correspondant à l'id " + id + " n'existe pas");
-
         return user;
     }
 
@@ -120,7 +127,7 @@ public class UserController implements HealthIndicator {
      */
     @CrossOrigin
     @DeleteMapping(value = "user/delete/{id}")
-    public void supprimerProduit(@PathVariable int id) {
+    public void deleteUserById(@PathVariable int id) {
         userDao.deleteById(id);
     }
 
