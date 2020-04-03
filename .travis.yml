@@ -9,7 +9,7 @@ services:
 - docker
 
 before_install:
-- cd Install/docker/dev
+- cd OpenGuitarStore/Install/docker/dev
 - docker-compose -p guitarstoredb up -d database
 
 script:
