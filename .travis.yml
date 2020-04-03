@@ -31,7 +31,7 @@ script:
 - mvn test
 - cd ../user
 - mvn test
-- cd ../docker/dev
+- cd ../Install/dev
 - docker container stop zuul
 - docker container stop eureka
 - docker container stop springconfig
