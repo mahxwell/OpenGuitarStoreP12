@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap eCommerce Page Template</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <div id="carouselExampleControls">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="assets/images/welcome.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <!--   <h5>Item 1 Heading</h5>
+                 <p>Item 1 Description</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="row">
+        <div class="col-2"><img class="rounded-circle" alt="Free Shipping" src="assets/images/welcome1.png"></div>
+        <div class="col-lg-6 col-10 ml-1">
+          <h4>Livraison Rapide</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="row">
+        <div class="col-2"><img class="rounded-circle" alt="Free Shipping" src="assets/images/welcome2.jpg"></div>
+        <div class="col-lg-6 col-10 ml-1">
+          <h4>Retour Gratuit</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="row">
+        <div class="col-2"><img class="rounded-circle" alt="Free Shipping" src="assets/images/welcome3.jpg"></div>
+        <div class="col-lg-6 col-10 ml-1">
+          <h4>Promotions</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<h2 class="text-center">MEILLEURES OFFRES</h2>
+<hr>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-4 pb-1 pb-md-0">
+      <div class="card">
+        <img class="card-img-top" src="{{guitars[0].guitarimageurl}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{guitars[0].guitarbrand}} {{guitars[0].guitarname}}</h5>
+          <p class="card-text">{{guitars[0].guitardescription}}</p>
+          <button class="btn btn-primary" (click)="onViewGuitar(guitars[0].guitarid)">Détails</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 pb-1 pb-md-0">
+      <div class="card">
+        <img class="card-img-top" src="{{guitars[1].guitarimageurl}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{guitars[1].guitarbrand}} {{guitars[1].guitarname}}</h5>
+          <p class="card-text">{{guitars[1].guitardescription}}</p>
+          <button class="btn btn-primary" (click)="onViewGuitar(guitars[1].guitarid)">Détails</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 pb-1 pb-md-0">
+      <div class="card">
+        <img class="card-img-top" src="{{guitars[2].guitarimageurl}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{guitars[2].guitarbrand}}  {{guitars[2].guitarname}}</h5>
+          <p class="card-text">{{guitars[2].guitardescription}}</p>
+          <button class="btn btn-primary" (click)="onViewGuitar(guitars[2].guitarid)">Détails</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+</body>
+</html>

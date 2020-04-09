@@ -1,0 +1,3 @@
+cd ..\..\..\ClientUIOpenGuitarStore\
+
+ng serve
