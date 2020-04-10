@@ -3,6 +3,7 @@ import {Reservation} from '../../models/Reservation.model';
 import {Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {ReservationService} from '../../services/reservation.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-listreservation',
@@ -17,7 +18,7 @@ export class ListreservationComponent implements OnInit {
   reservationSubject = new Subject<any[]>();
 
   constructor(private reservationService: ReservationService,
-              private http: HttpClient) {
+              private http: HttpClient, private router: Router) {
     const userid = Number(sessionStorage.getItem('id'));
     this.http.get<Reservation[]>(this.reservationUrl + '/reservations/' + String(userid))
       .subscribe(
@@ -37,6 +38,7 @@ export class ListreservationComponent implements OnInit {
   emitReservation() {
     this.reservationSubject.next(this.reservations.slice());
   }
+
   deleteReservationById(reservationid: number) {
     this.reservationService.deleteReservation(reservationid);
   }

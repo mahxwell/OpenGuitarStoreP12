@@ -9,7 +9,7 @@ export class OrderService {
 
 
   // private orderUrl = 'http://localhost:9005/';
-  private orderUrl = 'http://localhost:9004/order';
+  private orderUrl = 'http://localhost:9004/order/';
 
   constructor(private http: HttpClient) {
   }
