@@ -35,4 +35,29 @@ services:
       -  "9105:9105"
   batch:
     image: mahxwell/batch
-    container_name: batch   
+    container_name: batch
+  user:
+    image: mahxwell/user
+    container_name: user
+    ports:
+      -  "9003:9003"     
+  guitar:
+    image: mahxwell/guitar
+    container_name: guitar
+    ports:
+      -  "9002:9002"    
+  order:
+    image: mahxwell/order
+    container_name: order
+    ports:
+      -  "9005:9005"    
+  reservation:
+    image: mahxwell/reservation
+    container_name: reservation
+    ports:
+      -  "9007:9007"    
+  review:
+    image: mahxwell/review
+    container_name: review
+    ports:
+      -  "9008:9008"
