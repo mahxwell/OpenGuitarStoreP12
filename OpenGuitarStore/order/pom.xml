@@ -96,38 +96,14 @@
         </dependencies>
     </dependencyManagement>
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                </plugin>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
-                <!-- ===== Coveralls ===== -->
-                <plugin>
-                    <groupId>org.eluder.coveralls</groupId>
-                    <artifactId>coveralls-maven-plugin</artifactId>
-                    <configuration>
-                        <repoToken>GQ1Z3zOcPn9jjJTD5ZFLijsZxbZ33oiSQ</repoToken>
-                    </configuration>
-                    <version>4.3.0</version>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>cobertura-maven-plugin</artifactId>
-                    <version>2.7</version>
-                    <configuration>
-                        <format>xml</format>
-                        <maxmem>256m</maxmem>
-                        <!-- aggregated reports for multi-module projects -->
-                        <aggregate>true</aggregate>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        </plugins>
     </build>
-
     <repositories>
         <repository>
             <id>spring-milestones</id>
