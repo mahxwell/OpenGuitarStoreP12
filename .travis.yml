@@ -17,19 +17,14 @@ script:
 - docker-compose -p guitarstoredb up -d eureka
 - cd ../../guitar
 - mvn test
-- mvn --file pom.xml cobertura:cobertura coveralls:report
 - cd ../order
 - mvn test
-- mvn --file pom.xml cobertura:cobertura coveralls:report
 - cd ../reservation
 - mvn test
-- mvn --file pom.xml cobertura:cobertura coveralls:report
 - cd ../review
 - mvn test
-- mvn --file pom.xml cobertura:cobertura coveralls:report
 - cd ../user
 - mvn test
-- mvn --file pom.xml cobertura:cobertura coveralls:report
 - cd ../docker/dev
 - docker container stop eureka
 - docker container stop guitarstore_db
@@ -37,7 +32,7 @@ script:
 - docker rm eureka
 
 after_success:
-- mvn --file pom.xml cobertura:cobertura coveralls:report
+- mvn --file pom.xml cobertura:cobertura coveralls:report -P test-guitar
 
 notifications:
 email: false
