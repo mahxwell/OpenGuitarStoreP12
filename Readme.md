@@ -1,3 +1,7 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/mahxwell/openguitarstorep12/badge)](https://www.codefactor.io/repository/github/mahxwell/openguitarstorep12)
+
+[![Build Status](https://travis-ci.org/mahxwell/OpenGuitarStoreP12.svg?branch=master)](https://travis-ci.org/mahxwell/OpenGuitarStoreP12)
+
 Still in Development
 
 You shall need Java 8 and Docker App to deploy OpenGuitarStore App
