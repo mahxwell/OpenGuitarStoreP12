@@ -20,7 +20,7 @@ script:
 - cd ../docker/dev
 - docker container stop eureka
 - docker container stop guitarstore_db
-- docker rm guitarstoredb
+- docker rm guitarstore_db
 - docker rm eureka
 
 
