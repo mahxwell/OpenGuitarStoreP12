@@ -1,4 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/mahxwell/openguitarstorep12/badge)](https://www.codefactor.io/repository/github/mahxwell/openguitarstorep12)[![Build Status](https://travis-ci.org/mahxwell/OpenGuitarStoreP12.svg?branch=master)](https://travis-ci.org/mahxwell/OpenGuitarStoreP12)
+[![Build Status](https://travis-ci.org/mahxwell/OpenGuitarStoreP12.svg?branch=master)](https://travis-ci.org/mahxwell/OpenGuitarStoreP12) [![CodeFactor](https://www.codefactor.io/repository/github/mahxwell/openguitarstorep12/badge)](https://www.codefactor.io/repository/github/mahxwell/openguitarstorep12)
 
 Still in Development
 
