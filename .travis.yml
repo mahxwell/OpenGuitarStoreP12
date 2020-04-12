@@ -17,6 +17,14 @@ script:
 - docker-compose -p guitarstoredb up -d eureka
 - cd ../../guitar
 - mvn test
+- cd ../order
+- mvn test
+- cd ../reservation
+- mvn test
+- cd ../review
+- mvn test
+- cd ../user
+- mvn test
 - cd ../docker/dev
 - docker container stop eureka
 - docker container stop guitarstore_db
