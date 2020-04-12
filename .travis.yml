@@ -10,13 +10,11 @@ services:
 
 before_install:
 - cd OpenGuitarStore/docker/dev
+
+script:
 - docker-compose -p guitarstoredb up -d database
 - docker build -t mahxwell/eureka servers/02_eureka
 - docker-compose -p guitarstoredb up -d eureka
-
-
-
-script:
 - cd ../../guitar
 - mvn test
 - cd ../docker/dev
