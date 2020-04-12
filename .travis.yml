@@ -31,6 +31,8 @@ script:
 - docker rm guitarstore_db
 - docker rm eureka
 
+after_success:
+- mvn --file pom.xml cobertura:cobertura coveralls:report
 
 notifications:
 email: false
