@@ -15,15 +15,15 @@ Frameworks :
 
 `- SpringCloud`
 
-`- SpringAdmin`
+`- SpringAdmin 5.0`
 
-`- Maven version 3.6.2`
+`- Apache Maven`
 
 Server :
 
-`- Eureka`
+`- Eureka Server`
 
-`- Zuul`
+`- Zuul Server`
 
 Database :
 
@@ -34,13 +34,17 @@ Docker was also used for Applications deployment.
 
 For more informations, please follow "Get started" point bellow
 
+## Features
+
+Coming Soon.....
+
 ## Get Started
 
 ### WINDOWS DEPLOYMENT
 
 First of all, run Docker Desktop on your computer.
 
-All Docker scripts are made as .bat files : just double click on it to run
+All Docker scripts are made as `.bat` files, please just double click on it to run
 
 Please follow this specific order to deploy application : 
 
@@ -72,7 +76,7 @@ Frontend is made with Angular, you will need node.js and npm to make it work cor
 
 Install npm and node.js : https://www.npmjs.com/get-npm
 
-Install Frond End dependecies : 
+Install Frontend dependecies : 
 
 `- OpenGuitarStoreP12-master\Install\Windows\ClientUI\01_InstallNodes.bat`
 
@@ -82,7 +86,7 @@ Lauch ClientUI Server :
 
 #### Batch Processing deployment 
 
-All told in feature a reservation system and a newsletter system are implemented 
+As told in previously in Features section, a reservation and a newsletters system are implemented 
 
 Run Batch : 
 
