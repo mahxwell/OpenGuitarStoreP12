@@ -70,6 +70,9 @@ You can stop and remove all Servers\ container by running :
 
 `- OpenGuitarStoreP12-master\Install\Windows\Servers\Purge\Purge.bat`
 
+For some troubles with Docker performance, running springcloud and springadmin servers are not recommanded.
+Yet docker scripts for both of them are in : `- OpenGuitarStoreP12-master\Install\Windows\Servers\Option\*`
+
 #### Frontend deployment 
 
 Frontend is made with Angular, you will need node.js and npm to make it work correctly
