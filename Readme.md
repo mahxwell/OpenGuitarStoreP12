@@ -46,7 +46,7 @@ First of all, run Docker Desktop on your computer.
 
 All Docker scripts are made as `.bat` files, please just double click on it to run
 
-Please follow this specific order to deploy application : 
+##### Please follow this specific order to deploy application and Wait 30 seconds between all steps !!
 
 #### Backend deployment 
 
