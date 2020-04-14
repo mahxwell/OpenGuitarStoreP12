@@ -105,7 +105,7 @@ Coming soon ....
 
 ### Run It On Your Browser !
 
-To run and test application please go to your brower : http://localhost:4200/
+To run and test application please enter in your broswer : http://localhost:4200/
 
 Please use Google Chrome for a better experience ! 
 
