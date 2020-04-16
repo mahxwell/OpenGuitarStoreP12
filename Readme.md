@@ -40,7 +40,7 @@ Coming Soon.....
 
 ## Get Started
 
-### WINDOWS DEPLOYMENT
+### DEPLOYMENT
 
 First of all, run Docker Desktop on your computer.
 
@@ -98,10 +98,6 @@ Run Batch :
 Stop Batch : 
 
 `- OpenGuitarStoreP12-master\Install\Windows\Batch\StopBatch.bat`
-
-### MacOS DEPLOYMENT
-
-Coming soon ....
 
 ### Run It On Your Browser !
 
