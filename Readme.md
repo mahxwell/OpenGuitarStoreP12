@@ -1,23 +1,112 @@
 [![Build Status](https://travis-ci.org/mahxwell/OpenGuitarStoreP12.svg?branch=master)](https://travis-ci.org/mahxwell/OpenGuitarStoreP12) [![CodeFactor](https://www.codefactor.io/repository/github/mahxwell/openguitarstorep12/badge)](https://www.codefactor.io/repository/github/mahxwell/openguitarstorep12)
 
-Still in Development
+# OPENGUITARSTORE
 
-You shall need Java 8 and Docker App to deploy OpenGuitarStore App
+This Project was created with :
 
-Get Started
+Languages : 
+  - Backend : `- Java 1.8`
+  - Frontend :`- Angular 8`
+  
 
-Go into Install/Windows folder
+Frameworks :
 
-Please launch app in this specific order : 
+`- SpringBoot 2.0`
 
-1. 01_composedb.bat
-2. 02_composeSpringConfig.bat
-3. 03_composeEureka.bat
-4. 04_composeZuul.bat
-5. 05_composeSpringAdmin.bat
+`- SpringCloud`
+
+`- SpringAdmin 5.0`
+
+`- Apache Maven`
+
+Server :
+
+`- Eureka Server`
+
+`- Zuul Server`
+
+Database :
+
+`- Postgre SQL(10.x)`
 
 
-Spring admin at this URL http://localhost:9105/#/
+Docker was also used for Applications deployment.
 
+For more informations, please follow "Get started" point bellow
 
-Next coming soon ...
+## Features
+
+Coming Soon.....
+
+## Get Started
+
+### DEPLOYMENT
+
+First of all, run Docker Desktop on your computer.
+
+All Docker scripts are made as `.bat` files, please just double click on it to run
+
+##### Please follow this specific order to deploy application and Wait 30 seconds between all steps !!
+
+#### Backend deployment 
+
+Run Database :
+
+`- OpenGuitarStoreP12-master\Install\Windows\Servers\01_composedb.bat`
+
+Run Eureka server :
+
+`- OpenGuitarStoreP12-master\Install\Windows\Servers\02_composeEureka.bat`
+
+Run ALL MicroServices :
+
+`- OpenGuitarStoreP12-master\Install\Windows\Servers\03_composeMicroServices.bat`
+
+Run Zuul Server : 
+
+`- OpenGuitarStoreP12-master\Install\Windows\Servers\04_composeZuul.bat`
+
+You can stop and remove all Servers\ container by running :
+
+`- OpenGuitarStoreP12-master\Install\Windows\Servers\Purge\Purge.bat`
+
+For some troubles with Docker performance, running springcloud and springadmin servers are not recommanded.
+Yet docker scripts for both of them are in : `- OpenGuitarStoreP12-master\Install\Windows\Servers\Option\*`
+
+#### Frontend deployment 
+
+Frontend is made with Angular, you will need node.js and npm to make it work correctly
+
+Install npm and node.js : https://www.npmjs.com/get-npm
+
+Install Frontend dependecies : 
+
+`- OpenGuitarStoreP12-master\Install\Windows\ClientUI\01_InstallNodes.bat`
+
+Lauch ClientUI Server :
+
+`- OpenGuitarStoreP12-master\Install\Windows\ClientUI\02_LaunchClienUIServer.bat`
+
+#### Batch Processing deployment 
+
+As told in previously in Features section, a reservation and a newsletters system are implemented 
+
+Run Batch : 
+
+`- OpenGuitarStoreP12-master\Install\Windows\Batch\BatchLauncher.bat`
+
+Stop Batch : 
+
+`- OpenGuitarStoreP12-master\Install\Windows\Batch\StopBatch.bat`
+
+### Run It On Your Browser !
+
+To run and test application please enter in your broswer : http://localhost:4200/
+
+Please use Google Chrome for a better experience ! 
+
+### Testing And Build
+
+Integration Tests were made with Travis CI 
+
+You can click on [![Build Status](https://travis-ci.org/mahxwell/OpenGuitarStoreP12.svg?branch=master)](https://travis-ci.org/mahxwell/OpenGuitarStoreP12)  to see more build details...
