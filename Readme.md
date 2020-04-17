@@ -125,21 +125,49 @@ Stop Batch :
 
 `- OpenGuitarStoreP12-master\Install\Windows\Batch\StopBatch.bat`
 
-### MacOS DEPLOYMENT
+### LINUX DEPLOYMENT(Only Tested on Ubuntu)
 
-Coming soon...
+First of all run Docker Desktop on your computer. 
+As Unix systems, all running scripts are `.sh` files.
+Please run this following commands in THIS order in your terminal (bash) :
 
-### LINUX DEPLOYMENT
+#### Backend deployment 
 
-Coming soon....
+Run all servers :
 
-### Run It On Your Browser !
+`- bash OpenGuitarStoreP12/Install/Linux/composeServers.sh`
+
+#### Frontend deployment 
+
+Frontend is made with Angular, you will need node.js and npm to make it work correctly
+
+Install npm and node.js : https://www.npmjs.com/get-npm
+
+Lauch ClientUI Server :
+
+`- bash OpenGuitarStoreP12/Install/Linux/ClientUI/composeClientUI.sh`
+
+#### Batch Processing deployment 
+
+As told in previously in Features section, a reservation and a newsletters system are implemented 
+
+Run Batch : 
+
+`- bash OpenGuitarStoreP12/Install/Linux/Batch/composeBatch.sh`
+
+### MACOS DEPLOYMENT
+
+MacOS deployement is the same as Linux one.
+Follow the same steps just bellow (Linux Deployment) to make it work correctly.
+Go to `MacOS` folder instead of `Linux` one.
+
+## Run It On Your Browser !
 
 To run and test application please enter in your broswer : http://localhost:4200/
 
 Please use Google Chrome for a better experience ! 
 
-### Testing And Build
+## Testing And Build
 
 Integration Tests were made with Travis CI 
 
