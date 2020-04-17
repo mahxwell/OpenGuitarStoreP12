@@ -36,7 +36,9 @@ For more informations, please follow "Get started" point bellow
 
 ## Features
 
+
 _Welcome to the best Guitar Store !_
+
 
 * Join the website and ROCK ON !  
 `- You can register as member of this website to access all features. Also Update, delete your profile anytime.`
@@ -53,7 +55,9 @@ _Welcome to the best Guitar Store !_
 * Rate and review anytime your instrument  
 `-  Give us your feedback on instrument, share it with rock community !`
 
+
 _Greetings From OpenGuitarStore team !_
+
 
 ## Get Started
 
@@ -87,7 +91,7 @@ You can stop and remove all Servers\ container by running :
 
 `- OpenGuitarStoreP12-master\Install\Windows\Servers\Purge\Purge.bat`
 
-For some troubles with Docker performance, running springcloud and springadmin servers are not recommanded.
+For some troubles with Docker performance, running springcloud and springadmin containers are not recommanded.
 Yet docker scripts for both of them are in : `- OpenGuitarStoreP12-master\Install\Windows\Servers\Option\*`
 
 #### Frontend deployment 
@@ -104,7 +108,7 @@ Lauch ClientUI Server :
 
 `- OpenGuitarStoreP12-master\Install\Windows\ClientUI\02_LaunchClienUIServer.bat`
 
-For some troubles with Docker performance, running clientui is not recommanded.
+For some troubles with Docker performance, running clientui container is not recommanded.
 Yet docker script are in : `- OpenGuitarStoreP12-master\Install\Windows\ClientUI\`
 Please just unzip `container.zip` archive and then launch `- composeClient.bat`
 
