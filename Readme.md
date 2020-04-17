@@ -40,7 +40,7 @@ Coming Soon.....
 
 ## Get Started
 
-### DEPLOYMENT
+### WINDOWS DEPLOYMENT
 
 First of all, run Docker Desktop on your computer.
 
@@ -87,6 +87,11 @@ Lauch ClientUI Server :
 
 `- OpenGuitarStoreP12-master\Install\Windows\ClientUI\02_LaunchClienUIServer.bat`
 
+For some troubles with Docker performance, running clientui is not recommanded.
+Yet docker script are in : `- OpenGuitarStoreP12-master\Install\Windows\ClientUI\`
+Please just unzip `container.zip` archive and then launch `- composeClient.bat`
+
+
 #### Batch Processing deployment 
 
 As told in previously in Features section, a reservation and a newsletters system are implemented 
@@ -98,6 +103,10 @@ Run Batch :
 Stop Batch : 
 
 `- OpenGuitarStoreP12-master\Install\Windows\Batch\StopBatch.bat`
+
+### MacOS DEPLOYMENT
+
+Coming soon...
 
 ### Run It On Your Browser !
 
