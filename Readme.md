@@ -36,7 +36,24 @@ For more informations, please follow "Get started" point bellow
 
 ## Features
 
-Coming Soon.....
+_Welcome to the best Guitar Store !_
+
+* Join the website and ROCK ON !  
+`- You can register as member of this website to access all features. Also Update, delete your profile anytime.`
+
+* Keep in touch with us !  
+`- Become a member to receive weekly newsletter with best deals !`
+
+* Buy your favourite Guitar !  
+`- Get your new instrument in only 3 days !`
+
+* Waiting for your wished Guitar  
+`- Some of OpenGuitarStore instrument are not commun, that's why you can reservate a guitar not available yet`
+
+* Rate and review anytime your instrument  
+`-  Give us your feedback on instrument, share it with rock community !`
+
+_Greetings From OpenGuitarStore team !_
 
 ## Get Started
 
