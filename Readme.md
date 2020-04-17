@@ -129,6 +129,10 @@ Stop Batch :
 
 Coming soon...
 
+### LINUX DEPLOYMENT
+
+Coming soon....
+
 ### Run It On Your Browser !
 
 To run and test application please enter in your broswer : http://localhost:4200/
