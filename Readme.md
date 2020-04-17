@@ -37,7 +37,7 @@ For more informations, please follow "Get started" point bellow
 ## Features
 
 
-_Welcome to the best Guitar Store !_
+_Welcome to the best Guitar Store online !_
 
 
 * Join the website and ROCK ON !  
